@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FP_Pemrograman.View"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="1090" Width="1920" WindowState="Maximized" 
+        Title="LoginWindow" Width="1920" Height="1080" WindowState="Maximized" 
         WindowStartupLocation="CenterScreen">
 
     <Window.Background>
@@ -24,7 +24,7 @@
     </Window.Background>
 
     <StackPanel Width="1650" Height="850" Background="Transparent">
-        <Grid Height="850" >
+        <Grid Height="850">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1050"/>
                 <!--Create 2 coloumn-->
@@ -41,47 +41,65 @@
 
             <StackPanel Grid.Column="1" Background="#FFFF">
                 <!--Right side-->
-                <Label Content="Log In"
+                <Label Content="Welcome back,"
                        Foreground="#9A80D2"
                        FontWeight="Bold"
                        FontSize="32pt"
-                       HorizontalAlignment="Center"
-                       Margin="0 100 0 0"
+                       HorizontalAlignment="Left"
+                       Margin="50 120 0 0"
+                       ></Label>
+
+                <Label Content="Fill the username and password to login"
+                       Foreground="#9A80D2"
+                       FontWeight="Normal"
+                       FontSize="13pt"
+                       HorizontalAlignment="Left"
+                       Margin="50 0 0 0"
                        ></Label>
 
                 <Label Content="Username"
                        Foreground="Black"
                        FontWeight="Normal"
-                       FontSize="18pt"
+                       FontSize="16pt"
                        Padding="0"
                        Margin="50 70 50 0"
                        ></Label>
 
                 <TextBox x:Name="txtUsername"
-                           Margin="50 0 50 0"
-                           Padding="0 10 10 10"
+                           Margin="50 20 50 0"
+                           Padding="5 13 10 13"
                            FontWeight="Light"
                            FontSize="16pt"
-                           BorderThickness="0 0 0 2"
-                           BorderBrush="#B999FF"
-                           ></TextBox>
+                           BorderBrush="#B999FF">
+                    
+                           <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="6"></Setter>
+                                </Style>
+                           </TextBox.Resources>
+                </TextBox>
 
                 <Label Content="Password"
                        Foreground="Black"
                        FontWeight="Normal"
-                       FontSize="18pt"
+                       FontSize="16pt"
                        Padding="0"
-                       Margin="50 50 50 0"
+                       Margin="50 40 50 0"
                        ></Label>
 
                 <PasswordBox x:Name="txtPassword"
-                           Margin="50 0 50 0"
-                           Padding="0 10 10 10"
+                           Margin="50 20 50 0"
+                           Padding="5 13 10 13"
                            FontWeight="Light"
                            FontSize="16pt"
-                           BorderThickness="0 0 0 2"
-                           BorderBrush="#B999FF"
-                           ></PasswordBox>
+                           BorderBrush="#B999FF">
+                    
+                           <PasswordBox.Resources>
+                               <Style TargetType="{x:Type Border}">
+                                   <Setter Property="CornerRadius" Value="6"></Setter>
+                               </Style>
+                           </PasswordBox.Resources>
+                </PasswordBox>
 
                 <Label Content="Forgot Password ?"
                        Margin="50 30 50 0"
