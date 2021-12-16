@@ -10,12 +10,12 @@
 
     <StackPanel Width="1920">
         <WrapPanel Orientation="Horizontal">
+            <!--sidebar-->
             <Grid Height="1064">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="350"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <!--sidebar-->
                 <StackPanel Grid.Column="0">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
@@ -114,10 +114,9 @@
                            ></Label>
                     </WrapPanel>
                 </StackPanel>
-
-                <!--content-->
             </Grid>
-
+            
+            <!--leftbar-->
             <Grid Height="1064">
 
                 <Grid.RowDefinitions>
@@ -125,6 +124,7 @@
                     <RowDefinition Height="984"></RowDefinition>
                 </Grid.RowDefinitions>
 
+                <!--navbar-->
                 <StackPanel Grid.Row="0" Height="80" Width="1570" >
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
@@ -160,6 +160,7 @@
                     </WrapPanel>
                 </StackPanel>
                 
+                <!--content-->
                 <StackPanel Grid.Row="1" Height="984" Width="1570">
                     
                 </StackPanel>
