@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FP_Pemrograman.View"
         mc:Ignorable="d"
         Title="DashboardWindow" Width="1920" Height="1080" WindowState="Maximized" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" FontFamily="robo">
 
     <StackPanel Width="1920">
         <WrapPanel Orientation="Horizontal">
@@ -118,7 +118,6 @@
             
             <!--leftbar-->
             <Grid Height="1064">
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="80"></RowDefinition>
                     <RowDefinition Height="984"></RowDefinition>
@@ -162,7 +161,6 @@
                 
                 <!--content-->
                 <StackPanel Grid.Row="1" Height="984" Width="1570">
-                    
                 </StackPanel>
             </Grid>
         </WrapPanel>

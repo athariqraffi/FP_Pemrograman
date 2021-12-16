@@ -67,10 +67,11 @@
 
                 <TextBox x:Name="txtUsername"
                            Margin="50 20 50 0"
-                           Padding="5 13 10 13"
+                           Padding="8 13 10 13"
                            FontWeight="Light"
                            FontSize="16pt"
-                           BorderBrush="#B999FF">
+                           BorderBrush="#B999FF"
+                           MaxLength="20">
                     
                            <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
@@ -87,20 +88,22 @@
                        Margin="50 40 50 0"
                        ></Label>
 
-                <PasswordBox x:Name="txtPassword"
-                           Margin="50 20 50 0"
-                           Padding="5 13 10 13"
+                <Border BorderBrush="#B999FF" 
+                        BorderThickness="1" 
+                        CornerRadius="6" 
+                        Margin="50 20 50 0"
+>
+                    <PasswordBox x:Name="txtPassword"
+                           Padding="8 13 10 13"
                            FontWeight="Light"
                            FontSize="16pt"
-                           BorderBrush="#B999FF">
-                    
-                           <PasswordBox.Resources>
-                               <Style TargetType="{x:Type Border}">
-                                   <Setter Property="CornerRadius" Value="6"></Setter>
-                               </Style>
-                           </PasswordBox.Resources>
-                </PasswordBox>
-
+                           BorderThickness="0"
+                           BorderBrush="Transparent"
+                           Background="Transparent"
+                           MaxLength="20">
+                    </PasswordBox>
+                </Border>
+                
                 <Label Content="Forgot Password ?"
                        Margin="50 30 50 0"
                        FontSize="14pt"
