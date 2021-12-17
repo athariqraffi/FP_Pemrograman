@@ -5,8 +5,174 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FP_Pemrograman"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920" 
+        WindowStartupLocation="CenterOwner" WindowState="Maximized"> 
+    
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <Grid Grid.Column="0">
+            <!--gradient color-->
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FFFBC7D4" Offset="1"/>
+                    <GradientStop Color="#FFC5BDEF" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Source="../img/Thrift Shop.png"
+                   Width="250"></Image>
+
+            <DockPanel Grid.Row="1" x:Name="menuDashboard">
+                <Image Source="../img/dashboard_icon.png"
+                           Width="35"
+                           Margin="50 0 0 0"></Image>
+
+                <Label Content="Dashboard"
+                           FontSize="20pt"
+                           FontWeight="Normal"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center"></Label>
+            </DockPanel>
+
+            <DockPanel Grid.Row="2" x:Name="menuIncome">
+                <Image Source="../img/income_icon.png"
+                           Width="35"
+                           Margin="50 0 0 0"></Image>
+
+                <Label Content="Income"
+                           FontSize="20pt"
+                           FontWeight="Normal"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center"></Label>
+            </DockPanel>
+
+            <DockPanel Grid.Row="3" x:Name="menuStatistics">
+                <Image Source="../img/statistic_icon.png"
+                           Width="35"
+                           Margin="50 0 0 0"></Image>
+
+                <Label Content="Statistic"
+                           FontSize="20pt"
+                           FontWeight="Normal"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center"></Label>
+            </DockPanel>
+
+            <DockPanel Grid.Row="4" x:Name="menuStocks">
+                <Image Source="../img/stocks_icon.png"
+                           Width="35"
+                           Margin="50 0 0 0"></Image>
+
+                <Label Content="Stocks"
+                           FontSize="20pt"
+                           FontWeight="Normal"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center"></Label>
+            </DockPanel>
+
+            <DockPanel Grid.Row="5" x:Name="menuHelps">
+                <Image Source="../img/help_icon.png"
+                           Width="35"
+                           Margin="50 0 0 0"></Image>
+
+                <Label Content="Helps"
+                           FontSize="20pt"
+                           FontWeight="Normal"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center"></Label>
+            </DockPanel>
+
+            <DockPanel Grid.Row="8" x:Name="menuLogout">
+                <Image Source="../img/logout_icon.png"
+                           Width="30"
+                           Margin="50 0 0 0"></Image>
+
+                <Label Content="Log out"
+                           FontSize="20pt"
+                           FontWeight="Normal"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center"></Label>
+            </DockPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <!--gradient color-->
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FFFBC7D4" Offset="0"/>
+                        <GradientStop Color="#FFC5BDEF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <DockPanel HorizontalAlignment="Right" Margin="0 0 50 0">
+                        <Label Content="Nihao, Azam"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="SemiBold"></Label>
+
+                        <Image Source="../img/mail_icon.png"
+                               Width="40"
+                               Margin="30 0 0 0"></Image>
+
+                        <Ellipse Width="50" Height="50" Margin="30 0 0 0">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="../img/admin_pic.png"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </DockPanel>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Frame x:Name="frmMain"
+                       NavigationUIVisibility="Hidden"
+                       Margin="30">
+                </Frame>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

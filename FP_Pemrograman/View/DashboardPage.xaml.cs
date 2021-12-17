@@ -8,16 +8,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FP_Pemrograman.View
 {
     /// <summary>
-    /// Interaction logic for DashboardWindow.xaml
+    /// Interaction logic for DashboardPage.xaml
     /// </summary>
-    public partial class DashboardWindow : Window
+    public partial class DashboardPage : Page
     {
-        public DashboardWindow()
+        public DashboardPage()
         {
             InitializeComponent();
         }
