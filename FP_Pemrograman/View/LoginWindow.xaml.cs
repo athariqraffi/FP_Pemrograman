@@ -17,9 +17,17 @@ namespace FP_Pemrograman.View
     /// </summary>
     public partial class LoginWindow : Window
     {
+        Controller.LoginController user;
         public LoginWindow()
         {
             InitializeComponent();
+
+            user = new Controller.LoginController(this);
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            user.Login();
         }
     }
 }
