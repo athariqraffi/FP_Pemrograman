@@ -20,12 +20,23 @@ namespace FP_Pemrograman.Controller
             user.username = login.txtUsername.Text;
             user.password = login.txtPassword.Password;
 
-            login.dummyBox.Text = "";
-            View.MainWindow main = new View.MainWindow();
-            main.Show();
-            login.Close();
+            bool result = user.CekLogin();
 
-           
+            if (result)
+            {
+                login.dummyBox.Text = "";
+                View.ParentWindow parent= new View.ParentWindow();
+                parent.Show();
+                login.Close();
+            }
+            else
+            {
+                login.dummyBox.Text = "Username atau Password Salah";
+                login.txtUsername.Text = "";
+                login.txtUsername.Focus();
+                login.txtPassword.Password = "";
+
+            }
         }
     }
 }

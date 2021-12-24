@@ -27,7 +27,7 @@ namespace FP_Pemrograman.Model
 
             DataSet dataSet = new DataSet();
 
-            dataSet = temp.Select("user", "username = '" + username + "' AND password = '" + password + "'");
+            dataSet = temp.Select("userLogin", "username = '" + username + "' AND password = '" + password + "'");
 
             if (dataSet.Tables[0].Rows.Count > 0) //kondisi jika tables memiliki data atau tidak 
             {

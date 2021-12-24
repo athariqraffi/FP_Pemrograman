@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows;
 
 namespace FP_Pemrograman.Model
 {
@@ -22,8 +23,11 @@ namespace FP_Pemrograman.Model
                 return conn;
             }
 
+
             public DataSet Select(string tabel, string kondisi) //function select data (read)
             {
+                GetConnection();
+
                 DataSet dataSet = new DataSet();
 
                 try

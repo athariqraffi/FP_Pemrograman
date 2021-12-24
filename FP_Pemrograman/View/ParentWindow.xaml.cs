@@ -13,13 +13,13 @@ using System.Windows.Shapes;
 namespace FP_Pemrograman.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ParentWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ParentWindow : Window
     {
-       public MainWindow()
+        public ParentWindow()
         {
-
+            InitializeComponent();
         }
     }
 }
