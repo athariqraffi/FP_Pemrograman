@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="470"></RowDefinition>
+            <RowDefinition Height="430"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -55,11 +55,23 @@
                             </Border.Effect>
 
                         <StackPanel Background="Transparent">
-                            <Label Content="Penjualan &#10; Hari Ini"
-                                   FontSize="14pt"
+                            <Label Content="Transaksi &#10; Hari Ini"
+                                   FontSize="16pt"
                                    FontWeight="Bold"
                                    HorizontalContentAlignment="Center"
                                    Padding="0 20 0 10"></Label>
+                            
+                            <Label Content="0"
+                                   FontSize="44pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Margin="0 50 0 0"></Label>
+
+                            <Label Content="Transaksi"
+                                   FontSize="16pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 50 0 0"></Label>
                         </StackPanel>    
                     </Border>
                 </Grid>
@@ -76,6 +88,26 @@
                                                   Direction="1010"
                                                   ></DropShadowEffect>
                         </Border.Effect>
+
+                        <StackPanel Background="Transparent">
+                            <Label Content="Keuntungan Hari Ini"
+                                   FontSize="16pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 20 0 10"></Label>
+
+                            <Label Content="0"
+                                   FontSize="44pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Margin="0 50 0 0"></Label>
+
+                            <Label Content="Transaksi"
+                                   FontSize="16pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 50 0 0"></Label>
+                        </StackPanel>
                     </Border>
                 </Grid>
 
@@ -91,6 +123,26 @@
                                                   Direction="1010"
                                                   ></DropShadowEffect>
                         </Border.Effect>
+
+                        <StackPanel Background="Transparent">
+                            <Label Content="Transaksi &#10; Hari Ini"
+                                   FontSize="16pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 20 0 10"></Label>
+
+                            <Label Content="0"
+                                   FontSize="44pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Margin="0 50 0 0"></Label>
+
+                            <Label Content="Transaksi"
+                                   FontSize="16pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 50 0 0"></Label>
+                        </StackPanel>
                     </Border>
                 </Grid>
 
