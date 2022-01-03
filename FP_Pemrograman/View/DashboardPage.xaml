@@ -5,10 +5,97 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FP_Pemrograman.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="943" d:DesignWidth="1580" Background="#FFFF"
       Title="DashboardPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="470"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1000"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Label Content="Selamat datang, "
+                       x:Name="lblSelamatDatang"
+                       FontSize="20pt"
+                       FontWeight="SemiBold"
+                       Padding="20 15 0 0"
+                       ></Label>
+            </Grid>
+            
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" >
+                    <Border Background="White"
+                            CornerRadius="15"
+                            BorderThickness="1"
+                            BorderBrush="#E1E1E1"
+                            Width="300">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#E1E1E1"
+                                                  Opacity="20" 
+                                                  Direction="1010"
+                                                  ></DropShadowEffect>
+                            </Border.Effect>
+
+                        <StackPanel Background="Transparent">
+                            <Label Content="Penjualan &#10; Hari Ini"
+                                   FontSize="14pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 20 0 10"></Label>
+                        </StackPanel>    
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="1" >
+                    <Border Background="White"
+                            CornerRadius="15"
+                            BorderThickness="1"
+                            BorderBrush="#E1E1E1"
+                            Width="300">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#E1E1E1"
+                                                  Opacity="20" 
+                                                  Direction="1010"
+                                                  ></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="2" >
+                    <Border Background="White"
+                            CornerRadius="15"
+                            BorderThickness="1"
+                            BorderBrush="#E1E1E1"
+                            Width="300">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#E1E1E1"
+                                                  Opacity="20" 
+                                                  Direction="1010"
+                                                  ></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                </Grid>
+
+
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

@@ -10,7 +10,7 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
@@ -45,7 +45,7 @@
             </Grid.RowDefinitions>
 
             <Image Source="../img/Thrift Shop.png"
-                   Width="250"></Image>
+                   Width="200"></Image>
 
             <DockPanel Grid.Row="1" x:Name="menuDashboard">
                 <Image Source="../img/dashboard_icon.png"
@@ -170,7 +170,7 @@
             <Grid Grid.Row="1">
                 <Frame x:Name="frmMain"
                        NavigationUIVisibility="Hidden"
-                       Margin="30">
+                       Margin="20">
                 </Frame>
             </Grid>
         </Grid>
