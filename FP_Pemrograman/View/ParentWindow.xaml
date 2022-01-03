@@ -170,7 +170,7 @@
             <Grid Grid.Row="1">
                 <Frame x:Name="frmMain"
                        NavigationUIVisibility="Hidden"
-                       Margin="20">
+                       Margin="30">
                 </Frame>
             </Grid>
         </Grid>
