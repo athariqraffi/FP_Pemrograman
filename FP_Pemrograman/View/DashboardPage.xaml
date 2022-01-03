@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="430"></RowDefinition>
+            <RowDefinition Height="440"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -19,7 +19,7 @@
                 <RowDefinition Height="70"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1000"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -33,8 +33,8 @@
                        Padding="20 15 0 0"
                        ></Label>
             </Grid>
-            
-            <Grid Grid.Column="0" Grid.Row="1">
+
+            <Grid Grid.Column="0" Grid.Row="1" Margin="0 0 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
@@ -42,41 +42,6 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid Grid.Column="0" >
-                    <Border Background="White"
-                            CornerRadius="15"
-                            BorderThickness="1"
-                            BorderBrush="#E1E1E1"
-                            Width="300">
-                            <Border.Effect>
-                                <DropShadowEffect Color="#E1E1E1"
-                                                  Opacity="20" 
-                                                  Direction="1010"
-                                                  ></DropShadowEffect>
-                            </Border.Effect>
-
-                        <StackPanel Background="Transparent">
-                            <Label Content="Transaksi &#10; Hari Ini"
-                                   FontSize="16pt"
-                                   FontWeight="Bold"
-                                   HorizontalContentAlignment="Center"
-                                   Padding="0 20 0 10"></Label>
-                            
-                            <Label Content="0"
-                                   FontSize="44pt"
-                                   FontWeight="Bold"
-                                   HorizontalContentAlignment="Center"
-                                   Margin="0 50 0 0"></Label>
-
-                            <Label Content="Transaksi"
-                                   FontSize="16pt"
-                                   FontWeight="Bold"
-                                   HorizontalContentAlignment="Center"
-                                   Padding="0 50 0 0"></Label>
-                        </StackPanel>    
-                    </Border>
-                </Grid>
-
-                <Grid Grid.Column="1" >
                     <Border Background="White"
                             CornerRadius="15"
                             BorderThickness="1"
@@ -90,13 +55,14 @@
                         </Border.Effect>
 
                         <StackPanel Background="Transparent">
-                            <Label Content="Keuntungan Hari Ini"
+                            <Label Content="Transaksi &#10; Hari ini"
                                    FontSize="16pt"
                                    FontWeight="Bold"
                                    HorizontalContentAlignment="Center"
                                    Padding="0 20 0 10"></Label>
 
-                            <Label Content="0"
+                            <Label x:Name="lblTransaksi"
+                                   Content="0"
                                    FontSize="44pt"
                                    FontWeight="Bold"
                                    HorizontalContentAlignment="Center"
@@ -107,6 +73,43 @@
                                    FontWeight="Bold"
                                    HorizontalContentAlignment="Center"
                                    Padding="0 50 0 0"></Label>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="1" >
+                    <Border Background="White"
+                            CornerRadius="15"
+                            BorderThickness="1"
+                            BorderBrush="#E1E1E1"
+                            Width="300"
+                            >
+                        <Border.Effect>
+                            <DropShadowEffect Color="#E1E1E1"
+                                                  Opacity="20" 
+                                                  Direction="1010"
+                                                  ></DropShadowEffect>
+                        </Border.Effect>
+
+                        <StackPanel Background="Transparent">
+                            <Label Content="Keuntungan"
+                                   FontSize="16pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 20 0 0"></Label>
+
+                            <Label Content="Hari ini"
+                                   FontSize="16pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 0 0 10"></Label>
+
+                            <Label x:Name="lblKeuntungan"
+                                   Content="0"
+                                   FontSize="44pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Margin="0 50 0 0"></Label>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -125,11 +128,17 @@
                         </Border.Effect>
 
                         <StackPanel Background="Transparent">
-                            <Label Content="Transaksi &#10; Hari Ini"
+                            <Label Content="Barang Yang Masuk"
                                    FontSize="16pt"
                                    FontWeight="Bold"
                                    HorizontalContentAlignment="Center"
-                                   Padding="0 20 0 10"></Label>
+                                   Padding="0 20 0 0"></Label>
+
+                            <Label Content="Hari ini"
+                                   FontSize="16pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Center"
+                                   Padding="0 0 0 10"></Label>
 
                             <Label Content="0"
                                    FontSize="44pt"
@@ -137,7 +146,7 @@
                                    HorizontalContentAlignment="Center"
                                    Margin="0 50 0 0"></Label>
 
-                            <Label Content="Transaksi"
+                            <Label Content="Barang"
                                    FontSize="16pt"
                                    FontWeight="Bold"
                                    HorizontalContentAlignment="Center"
@@ -145,9 +154,32 @@
                         </StackPanel>
                     </Border>
                 </Grid>
+            </Grid>
 
-
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Calendar FontSize="24"></Calendar>
             </Grid>
         </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Label Content="History Penjualan Hari Ini"
+                       FontSize="24pt" Margin="10,30,0,0"></Label>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <DataGrid x:Name="dgTerlambat"
+                          Width="850" 
+                          HorizontalAlignment="Left"
+                          Margin="20"/>
+            </Grid>
+
+        </Grid>
+
     </Grid>
 </Page>
