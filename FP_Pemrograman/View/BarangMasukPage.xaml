@@ -49,6 +49,12 @@
                                 BorderBrush="Transparent"></Button>
                 </Border>
             </Grid>
+
+            <Grid Grid.Column="1">
+                <ComboBox>
+                    
+                </ComboBox>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
