@@ -82,14 +82,12 @@
                       VerticalAlignment="Top"
                       Margin="20 50 0 0"
                       Height="600"
-                      x:Name="dgBarangMasuk">
-
-            </DataGrid>
+                      x:Name="dgBarangMasuk"/>
 
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
                     Opacity="1"
-                    Visibility="Hidden">
+                    Visibility="Visible">
 
                 <Border Width="850"
                     Height="600" 

@@ -7,130 +7,136 @@ using System.Windows;
 
 namespace FP_Pemrograman.Model
 {
-        class ModelTemplateQuery
-        {
-            private static SqlConnection conn;
-            private SqlCommand command;
-            private bool result;
+    class ModelTemplateQuery
+    {
+        private static SqlConnection conn;
+        private SqlCommand command;
+        private bool result;
 
-            public ModelTemplateQuery()
+        public ModelTemplateQuery()
         {
             GetConnection();
         }
 
-            public static SqlConnection GetConnection()
+        public static SqlConnection GetConnection()
+        {
+            conn = new SqlConnection();
+
+            conn.ConnectionString = "Data Source = DESKTOP-KS8FOVV;" +
+                                    "Initial Catalog = FP_PUKI;" +
+                                    "Integrated Security = True";
+            return conn;
+        }
+
+
+
+
+        public DataSet Select(string tabel, string kondisi = "") //function select data (read)
+        {
+            GetConnection();
+
+            DataSet dataSet = new DataSet();
+
+            try
             {
-                conn = new SqlConnection();
+                conn.Open();
+                command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.Text;
 
-                conn.ConnectionString = "Data Source = EL-LOBO;" +
-                                        "Initial Catalog = FPPemrog;" +
-                                        "Integrated Security = True";
-                return conn;
-            }
-
-
-            public DataSet Select(string tabel, string kondisi) //function select data (read)
-            {
-                GetConnection();
-
-                DataSet dataSet = new DataSet();
-
-                try
+                if (kondisi == "")
                 {
-                    conn.Open();
-                    command = new SqlCommand();
-                    command.Connection = conn;
-                    command.CommandType = CommandType.Text;
-
-                    if (kondisi == null)
-                    {
-                        command.CommandText = "SELECT * FROM " + tabel;
-                    }
-                    else
-                    {
-                        command.CommandText = "SELECT * FROM " + tabel + " WHERE " + kondisi;
-                    }
-
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                    dataAdapter.Fill(dataSet, tabel);
+                    command.CommandText = "SELECT * FROM " + tabel;
                 }
-                catch (SqlException)
+                else
                 {
-                    dataSet = null;
+                    command.CommandText = "SELECT * FROM " + tabel + " WHERE " + kondisi;
                 }
 
-                conn.Close();
-                return dataSet;
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                dataAdapter.Fill(dataSet, tabel);
+            }
+            catch (SqlException)
+            {
+                dataSet = null;
             }
 
-            public Boolean Insert(string tabel, string data) //insert data (create)
+            conn.Close();
+            return dataSet;
+        }
+
+        public Boolean Insert(string tabel, string data) //insert data (create)
+        {
+            GetConnection();
+            result = false;
+
+            try
             {
-                GetConnection();
+                string query = "INSERT INTO " + tabel + " VALUES (" + data + ")";
+                conn.Open();
+                command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                result = true;
+            }
+            catch (SqlException)
+            {
                 result = false;
-
-                try
-                {
-                    string query = "INSERT INTO " + tabel + " VALUES (" + data + ")";
-                    conn.Open();
-                    command = new SqlCommand();
-                    command.Connection = conn;
-                    command.CommandText = query;
-                    command.ExecuteNonQuery();
-                    result = true;
-                }
-                catch (SqlException)
-                {
-                    result = false;
-                }
-                conn.Close();
-                return result;
             }
-
-            public Boolean Update(string tabel, string data, string kondisi) //update data (update)
-            {
-            GetConnection();
-            result = false;
-
-                try
-                {
-                    string query = "UPDATE " + tabel + " SET " + data + " WHERE " + kondisi;
-                    conn.Open();
-                    command = new SqlCommand();
-                    command.Connection = conn;
-                    command.CommandText = query;
-                    command.ExecuteNonQuery();
-                    result = true;
-                }
-                catch (SqlException)
-                {
-                    result = false;
-                }
-                conn.Close();
-                return result;
-            }
-
-            public Boolean Delete(string tabel, string kondisi) //delete data (delete)
-            {
-            GetConnection();
-            result = false;
-
-                try
-                {
-                    string query = "DELETE FROM " + tabel + "WHERE " + kondisi;
-                    conn.Open();
-                    command = new SqlCommand();
-                    command.Connection = conn;
-                    command.CommandText = query;
-                    command.ExecuteNonQuery();
-                    result = true;
-                }
-                catch (SqlException)
-                {
-                    result = false;
-                }
-                conn.Close();
-                return result;
-            }
+            conn.Close();
+            return result;
         }
+
+        public Boolean Update(string tabel, string data, string kondisi) //update data (update)
+        {
+            GetConnection();
+            result = false;
+
+            try
+            {
+                string query = "UPDATE " + tabel + " SET " + data + " WHERE " + kondisi;
+                conn.Open();
+                command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                result = true;
+            }
+            catch (SqlException)
+            {
+                result = false;
+            }
+            conn.Close();
+            return result;
+        }
+
+        public Boolean Delete(string tabel, string kondisi) //delete data (delete)
+        {
+            GetConnection();
+            result = false;
+
+            try
+            {
+                string query = "DELETE FROM " + tabel + "WHERE " + kondisi;
+                conn.Open();
+                command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                result = true;
+            }
+            catch (SqlException)
+            {
+                result = false;
+            }
+            conn.Close();
+            return result;
+        }
+
+     
+
+
     }
+}
 

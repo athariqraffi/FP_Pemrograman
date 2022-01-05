@@ -11,9 +11,6 @@ namespace FP_Pemrograman.Model
         
 
         
-        public string getTransaksiCount()
-        {
-
-        }
+       
     }
 }

@@ -24,6 +24,7 @@ namespace FP_Pemrograman.View
         {
             InitializeComponent();
             barang = new Controller.BarangController(this);
+            barang.populateSupplier();
         }
 
         private void btnSimpanBrng_Click(object sender, RoutedEventArgs e)

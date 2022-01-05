@@ -10,11 +10,13 @@ namespace FP_Pemrograman.Controller
     {
         Model.BarangModel barang;
         View.BarangMasukPage barangpage;
+        Model.SupplierModel supplier;
 
         //instance
         public BarangController(View.BarangMasukPage barangpage)
         { 
             barang = new Model.BarangModel();
+            supplier = new Model.SupplierModel();
             this.barangpage = barangpage;
         }
 
@@ -36,6 +38,18 @@ namespace FP_Pemrograman.Controller
             {
                 MessageBox.Show("Maaf, proses input barang baru gagal, silahkan coba lagi");
             }
+
+        }
+
+
+        public void populateSupplier() 
+        {
+            DataSet ds = supplier.getAllSupplier();
+
+            barangpage.cmbSupplier.ItemsSource = ds.Tables[0].DefaultView;
+            barangpage.cmbSupplier.DisplayMemberPath = "nama_supplier";
+            barangpage.cmbSupplier.SelectedValuePath = "id_supplier";
+
 
         }
     }
