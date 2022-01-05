@@ -305,7 +305,7 @@
                                                 Background="Transparent"
                                                 BorderThickness="0"
                                                 Content="Simpan"
-                                                FontSize="12pt"></Button>
+                                                FontSize="12pt" Click="btnSimpanBrng_Click"></Button>
                                     </Border>
                                 </DockPanel>
                             </Grid>
