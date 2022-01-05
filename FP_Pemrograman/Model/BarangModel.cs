@@ -23,7 +23,7 @@ namespace FP_Pemrograman.Model
 
         public bool InsertBarang()
         {
-            string data = "'" + id_barang + "',' SP1 ','" + nama_barang + "','" + tanggal + "','" + harga + "'TEST'";
+            string data = "'" + id_barang + "','SP1','" + nama_barang + "','" + tanggal + "','" + harga + "'TEST'";
             return barang.Insert("barang", data);
         }
 }
