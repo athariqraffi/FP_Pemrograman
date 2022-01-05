@@ -89,7 +89,7 @@
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
                     Opacity="1"
-                    Visibility="Hidden">
+                    Visibility="Visible">
 
                 <Border Width="850"
                     Height="600" 
