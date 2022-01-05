@@ -88,7 +88,8 @@
 
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
-                    Opacity="1">
+                    Opacity="1"
+                    Visibility="Hidden">
 
                 <Border Width="850"
                     Height="600" 
@@ -312,6 +313,7 @@
                     </Grid>
                 </Border>
             </Canvas>
+            
         </Grid>
     </Grid>
 </Page>
