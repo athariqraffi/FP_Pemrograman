@@ -134,7 +134,28 @@ namespace FP_Pemrograman.Model
             return result;
         }
 
-     
+        public Boolean customNonQuery(string query)
+        {
+            GetConnection();
+
+            Boolean result;
+            int a = 0;
+
+            conn.Open();
+            command = new SqlCommand(query, conn);
+            try
+            {
+                a = command.ExecuteNonQuery();
+                result = true;
+            }
+            catch (SqlException)
+            {
+                result = false;
+            }
+            conn.Close();
+
+            return result;
+        }
 
 
     }

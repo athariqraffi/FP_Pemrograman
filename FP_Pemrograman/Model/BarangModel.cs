@@ -15,16 +15,16 @@ namespace FP_Pemrograman.Model
         public string tanggal { get; set; }
         public string harga { get; set; }
         public string foto { get; set; }
-    
+
         public BarangModel()
-        { 
-        barang = new ModelTemplateQuery();
+        {
+            barang = new ModelTemplateQuery();
         }
 
         public bool InsertBarang()
         {
-            string data = "'" + id_barang + "','SP1','" + nama_barang + "','" + tanggal + "','" + harga + "'TEST'";
-            return barang.Insert("barang", data);
+            string query = "insert into barang values(" + id_barang + "," + id_supplier + ",'" + nama_barang + "'," + tanggal + "," + harga + ", 'babi'" + ")";
+            return barang.customNonQuery(query);
         }
-}
+    }
 }

@@ -3,6 +3,8 @@ using System.Data;
 using System.Windows;
 using System.Collections.Generic;
 using System.Text;
+using System.Data.SqlClient;
+
 
 namespace FP_Pemrograman.Controller
 {
@@ -22,21 +24,21 @@ namespace FP_Pemrograman.Controller
 
         public void InsertController()
         {
-            
+
             barang.id_barang = barangpage.txtIdBrng.Text;
+            barang.id_supplier = barangpage.cmbSupplier.SelectedValue.ToString();
             barang.nama_barang = barangpage.txtNamaBrng.Text;
             barang.harga = barangpage.txtHargaBrng.Text;
             barang.tanggal = barangpage.dtpTglMsk.Text;
-            
 
-            bool result = barang.InsertBarang();
-            if (result)
+          
+            if (barang.InsertBarang())
             {
-                MessageBox.Show("Menginputkan barang baru berhasil");
+                MessageBox.Show("Data Berhasil Dimasukan");
             }
             else
             {
-                MessageBox.Show("Maaf, proses input barang baru gagal, silahkan coba lagi");
+                MessageBox.Show("Data Gagal Dimasukan");
             }
 
         }
