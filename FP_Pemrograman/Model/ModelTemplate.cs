@@ -18,7 +18,7 @@ namespace FP_Pemrograman.Model
                 conn = new SqlConnection();
 
                 conn.ConnectionString = "Data Source = EL-LOBO;" +
-                                        "Initial Catalog = test;" +
+                                        "Initial Catalog = FPPemrog;" +
                                         "Integrated Security = True";
                 return conn;
             }
@@ -60,6 +60,7 @@ namespace FP_Pemrograman.Model
 
             public Boolean Insert(string tabel, string data) //insert data (create)
             {
+                GetConnection();
                 result = false;
 
                 try
@@ -82,7 +83,8 @@ namespace FP_Pemrograman.Model
 
             public Boolean Update(string tabel, string data, string kondisi) //update data (update)
             {
-                result = false;
+            GetConnection();
+            result = false;
 
                 try
                 {
@@ -104,7 +106,8 @@ namespace FP_Pemrograman.Model
 
             public Boolean Delete(string tabel, string kondisi) //delete data (delete)
             {
-                result = false;
+            GetConnection();
+            result = false;
 
                 try
                 {

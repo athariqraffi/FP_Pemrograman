@@ -14,7 +14,8 @@ namespace FP_Pemrograman.Model
         public string nama_barang { get; set; }
         public string tanggal { get; set; }
         public string harga { get; set; }
-
+        public string foto { get; set; }
+    
         public BarangModel()
         { 
         barang = new ModelTemplateQuery();
@@ -22,7 +23,7 @@ namespace FP_Pemrograman.Model
 
         public bool InsertBarang()
         {
-            string data = "'" + id_barang + "','" + id_supplier + "','" + nama_barang + "','" + tanggal + "','" + harga + "'";
+            string data = "'" + id_barang + "',' SP1 ','" + nama_barang + "','" + tanggal + "','" + harga + "'TEST'";
             return barang.Insert("barang", data);
         }
 }

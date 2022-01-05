@@ -6,23 +6,26 @@ using System.Text;
 
 namespace FP_Pemrograman.Controller
 {
-    internal class Barang
+    internal class BarangController
     {
         Model.BarangModel barang;
         View.BarangMasukPage barangpage;
 
-        public Barang(View.BarangMasukPage barangpage)
+        //instance
+        public BarangController(View.BarangMasukPage barangpage)
         { 
             barang = new Model.BarangModel();
             this.barangpage = barangpage;
         }
 
-        public void Insert()
+        public void InsertController()
         {
-            barang.tanggal = barangpage.dtpTglMsk.Text;
+            
             barang.id_barang = barangpage.txtIdBrng.Text;
             barang.nama_barang = barangpage.txtNamaBrng.Text;
             barang.harga = barangpage.txtHargaBrng.Text;
+            barang.tanggal = barangpage.dtpTglMsk.Text;
+            
 
             bool result = barang.InsertBarang();
             if (result)

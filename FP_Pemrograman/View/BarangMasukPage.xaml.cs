@@ -18,9 +18,17 @@ namespace FP_Pemrograman.View
     /// </summary>
     public partial class BarangMasukPage : Page
     {
+        Controller.BarangController barang;
+
         public BarangMasukPage()
         {
             InitializeComponent();
+            barang = new Controller.BarangController(this);
+        }
+
+        private void btnSimpanBrng_Click(object sender, RoutedEventArgs e)
+        {
+            barang.InsertController();
         }
     }
 }
