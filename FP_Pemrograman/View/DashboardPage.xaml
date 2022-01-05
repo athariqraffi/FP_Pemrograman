@@ -157,7 +157,8 @@
             </Grid>
 
             <Grid Grid.Column="1" Grid.Row="1">
-                <Calendar FontSize="24"></Calendar>
+                <Calendar FontSize="24"
+                          Style="{DynamicResource styleCalendar}"></Calendar>
             </Grid>
         </Grid>
 

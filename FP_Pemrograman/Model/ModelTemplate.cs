@@ -17,7 +17,7 @@ namespace FP_Pemrograman.Model
             {
                 conn = new SqlConnection();
 
-                conn.ConnectionString = "Data Source = MSI;" +
+                conn.ConnectionString = "Data Source = EL-LOBO;" +
                                         "Initial Catalog = test;" +
                                         "Integrated Security = True";
                 return conn;

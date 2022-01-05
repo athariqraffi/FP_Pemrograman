@@ -21,5 +21,20 @@ namespace FP_Pemrograman.View
         {
             InitializeComponent();
         }
+
+        private void menuDashboard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frmMain.Navigate(new DashboardPage());
+        }
+
+        private void menuStocks_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frmMain.Navigate(new BarangMasukPage());
+        }
+
+        private void menuHelps_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frmMain.Navigate(new HelpPage());
+        }
     }
 }
