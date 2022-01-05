@@ -22,5 +22,29 @@ namespace FP_Pemrograman.View
         {
             InitializeComponent();
         }
+
+        private void btnTambahMasuk_Click(object sender, RoutedEventArgs e)
+        {
+            if (popTambah.Visibility == Visibility.Visible)
+            {
+                popTambah.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                popTambah.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnTambahMasuk_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (popTambah.Visibility == Visibility.Visible)
+            {
+                popTambah.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                popTambah.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

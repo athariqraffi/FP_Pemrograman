@@ -48,7 +48,7 @@
                                 Foreground="white"
                                 BorderThickness="0"
                                 BorderBrush="Transparent"
-                                x:Name="btnTambahMasuk"></Button>
+                                x:Name="btnTambahMasuk" Click="btnTambahMasuk_Click" MouseDown="btnTambahMasuk_MouseDown"></Button>
                 </Border>
             </Grid>
 
@@ -89,7 +89,7 @@
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
                     Opacity="1"
-                    Visibility="Visible">
+                    Visibility="Hidden">
 
                 <Border Width="850"
                     Height="600" 
