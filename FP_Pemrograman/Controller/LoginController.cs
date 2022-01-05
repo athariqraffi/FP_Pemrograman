@@ -17,7 +17,7 @@ namespace FP_Pemrograman.Controller
 
         public void Login()
         {
-            user.username = login.txtUsername.Text;
+            user.id_admin = login.txtUsername.Text;
             user.password = login.txtPassword.Password;
 
             bool result = user.CekLogin();

@@ -47,7 +47,7 @@
             <Image Source="../img/Thrift Shop.png"
                    Width="200"></Image>
 
-            <DockPanel Grid.Row="1" x:Name="menuDashboard">
+            <DockPanel Grid.Row="1" x:Name="menuDashboard" MouseLeftButtonDown="menuDashboard_MouseLeftButtonDown">
                 <Image Source="../img/dashboard_icon.png"
                            Width="35"
                            Margin="50 0 0 0"></Image>
@@ -83,7 +83,7 @@
                            VerticalAlignment="Center"></Label>
             </DockPanel>
 
-            <DockPanel Grid.Row="4" x:Name="menuStocks">
+            <DockPanel Grid.Row="4" x:Name="menuStocks" MouseLeftButtonDown="menuStocks_MouseLeftButtonDown">
                 <Image Source="../img/stocks_icon.png"
                            Width="35"
                            Margin="50 0 0 0"></Image>
@@ -95,7 +95,7 @@
                            VerticalAlignment="Center"></Label>
             </DockPanel>
 
-            <DockPanel Grid.Row="5" x:Name="menuHelps">
+            <DockPanel Grid.Row="5" x:Name="menuHelps" MouseLeftButtonDown="menuHelps_MouseLeftButtonDown">
                 <Image Source="../img/help_icon.png"
                            Width="35"
                            Margin="50 0 0 0"></Image>

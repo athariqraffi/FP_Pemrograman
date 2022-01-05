@@ -8,8 +8,7 @@ namespace FP_Pemrograman.Model
 {
     class UserModel
     {
-        public string id_user,
-                      username,
+        public string id_admin,
                       password;
 
         //declare object from ModelTemplate
@@ -27,7 +26,7 @@ namespace FP_Pemrograman.Model
 
             DataSet dataSet = new DataSet();
 
-            dataSet = temp.Select("userLogin", "username = '" + username + "' AND password = '" + password + "'");
+            dataSet = temp.Select("admin", "id_admin = '" + id_admin + "' AND password = '" + password + "'");
 
             if (dataSet.Tables[0].Rows.Count > 0) //kondisi jika tables memiliki data atau tidak 
             {
