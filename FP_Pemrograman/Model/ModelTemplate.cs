@@ -13,6 +13,11 @@ namespace FP_Pemrograman.Model
             private SqlCommand command;
             private bool result;
 
+            public ModelTemplateQuery()
+        {
+            GetConnection();
+        }
+
             public static SqlConnection GetConnection()
             {
                 conn = new SqlConnection();

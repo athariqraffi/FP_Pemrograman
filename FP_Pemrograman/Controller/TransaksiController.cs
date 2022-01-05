@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FP_Pemrograman.Controller
 {
-    class Transaksi
+    class TransaksiController
     {
     }
 }
