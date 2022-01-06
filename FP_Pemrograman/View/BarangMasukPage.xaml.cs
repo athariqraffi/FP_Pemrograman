@@ -55,5 +55,10 @@ namespace FP_Pemrograman.View
                 popTambah.Visibility = Visibility.Visible;
             }
         }
+
+        private void dtpTglMsk_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            dtpTglMsk.SelectedDate.ToString();
+        }
     }
 }

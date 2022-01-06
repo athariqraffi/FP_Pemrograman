@@ -232,9 +232,9 @@
                                            FontSize="11pt"
                                            Width="115"></Label>
 
-                                    <TextBlock x:Name="txtAlamatSupply"
+                                    <TextBox x:Name="txtAlamatSupply"
                                                Width="220"
-                                               Background="#ECECEC"></TextBlock>
+                                               Background="#ECECEC"></TextBox>
 
                                 </DockPanel>
 

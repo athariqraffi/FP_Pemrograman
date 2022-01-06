@@ -22,8 +22,8 @@ namespace FP_Pemrograman.Model
         {
             conn = new SqlConnection();
 
-            conn.ConnectionString = "Data Source = DESKTOP-KS8FOVV;" +
-                                    "Initial Catalog = FP_PUKI;" +
+            conn.ConnectionString = "Data Source = DESKTOP-CA6UQE7\\WIDIXON;" +
+                                    "Initial Catalog = projectakhirfinalfinal;" +
                                     "Integrated Security = True";
             return conn;
         }

@@ -28,9 +28,8 @@ namespace FP_Pemrograman.Controller
             barang.id_barang = barangpage.txtIdBrng.Text;
             barang.id_supplier = barangpage.cmbSupplier.SelectedValue.ToString();
             barang.nama_barang = barangpage.txtNamaBrng.Text;
+            barang.tanggal = barangpage.dtpTglMsk.SelectedDate.Value.Date;
             barang.harga = barangpage.txtHargaBrng.Text;
-            barang.tanggal = barangpage.dtpTglMsk.Text;
-
           
             if (barang.InsertBarang())
             {

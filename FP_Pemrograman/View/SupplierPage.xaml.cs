@@ -18,9 +18,16 @@ namespace FP_Pemrograman.View
     /// </summary>
     public partial class SupplierPage : Page
     {
+        Controller.SupplierController supplier;
         public SupplierPage()
         {
             InitializeComponent();
+            supplier = new Controller.SupplierController(this);
+        }
+
+        private void btnSimpanBrng_Click(object sender, RoutedEventArgs e)
+        {
+            supplier.InsertController();
         }
     }
 }

@@ -14,6 +14,8 @@ namespace FP_Pemrograman.Model
         public string no_hp { get; set; }
         public string alamat { get; set; }
 
+        public string email { get; set; }
+
         ModelTemplateQuery temp;
 
         public SupplierModel()
@@ -26,6 +28,13 @@ namespace FP_Pemrograman.Model
             DataSet ds = new DataSet();
             ds = temp.Select("Supplier", "");
             return ds;
+        }
+
+        public bool InsertSupplier()
+        {
+            
+            string data = "'" + id_supplier + "','" + nama_supplier + "','" + no_hp + "','" + alamat + "','" + email + "'";
+            return temp.Insert("supplier", data);
         }
     }
 }
