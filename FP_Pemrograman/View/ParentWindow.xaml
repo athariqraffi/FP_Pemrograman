@@ -38,7 +38,6 @@
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
@@ -97,20 +96,7 @@
 
             </DockPanel>
 
-
-            <DockPanel Grid.Row="5" x:Name="menuStocks" MouseLeftButtonDown="menuStocks_MouseLeftButtonDown">
-                <Image Source="../img/stocks_icon.png"
-                           Width="35"
-                           Margin="50 0 0 0"></Image>
-
-                <Label Content="Stocks"
-                           FontSize="20pt"
-                           FontWeight="Normal"
-                           Margin="10 0 0 0"
-                           VerticalAlignment="Center"></Label>
-            </DockPanel>
-
-            <DockPanel Grid.Row="6" x:Name="menuHelps" MouseLeftButtonDown="menuHelps_MouseLeftButtonDown">
+            <DockPanel Grid.Row="5" x:Name="menuHelps" MouseLeftButtonDown="menuHelps_MouseLeftButtonDown">
                 <Image Source="../img/help_icon.png"
                            Width="35"
                            Margin="50 0 0 0"></Image>

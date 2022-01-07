@@ -47,7 +47,7 @@
                             <Image Source="../img/addIcon.png"
                                    Width="25"
                                    Margin="30 0 0 0"></Image>
-                            
+
                             <Button Background="Transparent"
                                 Content="Tambah"
                                 FontSize="20pt"
@@ -59,7 +59,6 @@
                                 BorderBrush="Transparent"
                                 x:Name="btnTambahMasuk" Click="btnTambahMasuk_Click" MouseDown="btnTambahMasuk_MouseDown"></Button>
                         </DockPanel>
-                        
                     </Border>
 
                     <Border Width="200"

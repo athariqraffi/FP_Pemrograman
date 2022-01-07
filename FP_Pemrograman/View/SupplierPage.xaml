@@ -32,24 +32,63 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Border Width="200"
+                <DockPanel>
+                    <Border Width="200"
                         HorizontalAlignment="Left"
                         Margin="20 0 0 0"
                         Background="#C4BDF0"
                         BorderThickness="0"
                         BorderBrush="Transparent"
-                        CornerRadius="5"
-                        Height="60">
+                        CornerRadius="2"
+                        Height="65">
 
-                    <Button Background="Transparent"
+                        <DockPanel>
+                            <Image Source="../img/addIcon.png"
+                               Width="25"
+                               Margin="30 0 0 0"></Image>
+
+                            <Button Background="Transparent"
                                 Content="Tambah"
                                 FontSize="20pt"
                                 FontWeight="Bold"
                                 Foreground="white"
+                                Width="100"
+                                Margin="0 0 20 0"
                                 BorderThickness="0"
                                 BorderBrush="Transparent"
                                 x:Name="btnAddSupplier"></Button>
-                </Border>
+                        </DockPanel>
+                    </Border>
+
+                    <Border Width="200"
+                        HorizontalAlignment="Left"
+                        Margin="20 0 0 0"
+                        Background="#FD7E7E"
+                        BorderThickness="0"
+                        BorderBrush="Transparent"
+                        CornerRadius="2"
+                        Height="65">
+
+                        <DockPanel>
+                            <Image Source="../img/trashIcon.png"
+                               Width="25"
+                               Margin="30 0 0 0"></Image>
+
+                            <Button Background="Transparent"
+                                Content="Hapus"
+                                FontSize="20pt"
+                                FontWeight="Bold"
+                                Foreground="white"
+                                Width="100"
+                                Margin="0 0 20 0"
+                                BorderThickness="0"
+                                BorderBrush="Transparent"
+                                x:Name="btnHapusSupplier"></Button>
+                        </DockPanel>
+                    </Border>
+
+                </DockPanel>
+                
             </Grid>
 
             <Grid Grid.Column="1">
