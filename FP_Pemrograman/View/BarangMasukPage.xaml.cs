@@ -20,11 +20,14 @@ namespace FP_Pemrograman.View
     {
         Controller.BarangController barang;
 
+        private Microsoft.Win32.OpenFileDialog openFile;
+
         public BarangMasukPage()
         {
             InitializeComponent();
             barang = new Controller.BarangController(this);
-            barang.populateSupplier();
+
+            openFile = new Microsoft.Win32.OpenFileDialog();
         }
 
         private void btnSimpanBrng_Click(object sender, RoutedEventArgs e)
@@ -63,7 +66,16 @@ namespace FP_Pemrograman.View
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
         {
-
+            openFile.Filter = "Image FIle (*.jpg)|*.jpg|All Files (*.*)|*.*";
+            if (openFile.ShowDialog() == true)
+            {
+                string selectedFileName = openFile.FileName;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(selectedFileName);
+                bitmap.EndInit();
+                imgFoto.Source = bitmap;
+            }
         }
     }
 }

@@ -128,7 +128,7 @@
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
                     Opacity="1"
-                    Visibility="Hidden">
+                    Visibility="Visible">
 
                 <Border Width="850"
                     Height="600" 
@@ -328,7 +328,7 @@
                                                     CornerRadius="2"
                                                     BorderThickness="0.5"
                                                     BorderBrush="#AE94E7"
-                                                    Background="#D5C6F5">
+                                                    Background="#FFFF">
 
                                                 <Button x:Name="btnBrowse"                                                    
                                                     Content="Browse"

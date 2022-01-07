@@ -28,7 +28,7 @@ namespace FP_Pemrograman.Controller
             barang.id_barang = barangpage.txtIdBrng.Text;
             barang.id_supplier = barangpage.cmbSupplier.SelectedValue.ToString();
             barang.nama_barang = barangpage.txtNamaBrng.Text;
-            barang.tanggal = barangpage.dtpTglMsk.SelectedDate.Value.Date;
+            barang.tanggal = barangpage.dtpTglMsk.SelectedDate.Value.ToString("yyyy-MM-dd");
             barang.harga = barangpage.txtHargaBrng.Text;
           
             if (barang.InsertBarang())
@@ -39,18 +39,6 @@ namespace FP_Pemrograman.Controller
             {
                 MessageBox.Show("Data Gagal Dimasukan");
             }
-
-        }
-
-
-        public void populateSupplier() 
-        {
-            DataSet ds = supplier.getAllSupplier();
-
-            barangpage.cmbSupplier.ItemsSource = ds.Tables[0].DefaultView;
-            barangpage.cmbSupplier.DisplayMemberPath = "nama_supplier";
-            barangpage.cmbSupplier.SelectedValuePath = "id_supplier";
-
 
         }
     }

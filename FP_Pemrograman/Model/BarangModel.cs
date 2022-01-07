@@ -12,7 +12,7 @@ namespace FP_Pemrograman.Model
         public string id_barang { get; set; }
         public string id_supplier { get; set; }
         public string nama_barang { get; set; }
-        public DateTime tanggal { get; set; }
+        public string tanggal { get; set; }
         public string harga { get; set; }
         public string foto { get; set; }
 
