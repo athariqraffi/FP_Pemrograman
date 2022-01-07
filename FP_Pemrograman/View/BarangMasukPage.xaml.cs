@@ -58,7 +58,12 @@ namespace FP_Pemrograman.View
 
         private void dtpTglMsk_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            dtpTglMsk.SelectedDate.ToString();
+
+        }
+
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

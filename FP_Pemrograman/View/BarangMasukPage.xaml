@@ -32,24 +32,65 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Border Width="200"
+
+                <DockPanel>
+                    <Border Width="200"
                         HorizontalAlignment="Left"
                         Margin="20 0 0 0"
                         Background="#C4BDF0"
                         BorderThickness="0"
                         BorderBrush="Transparent"
-                        CornerRadius="5"
-                        Height="60">
+                        CornerRadius="2"
+                        Height="65">
 
-                    <Button Background="Transparent"
+                        <DockPanel>
+                            <Image Source="../img/addIcon.png"
+                                   Width="25"
+                                   Margin="30 0 0 0"></Image>
+                            
+                            <Button Background="Transparent"
                                 Content="Tambah"
                                 FontSize="20pt"
                                 FontWeight="Bold"
                                 Foreground="white"
                                 BorderThickness="0"
+                                Width="100"
+                                Margin="0 0 20 0"
                                 BorderBrush="Transparent"
                                 x:Name="btnTambahMasuk" Click="btnTambahMasuk_Click" MouseDown="btnTambahMasuk_MouseDown"></Button>
-                </Border>
+                        </DockPanel>
+                        
+                    </Border>
+
+                    <Border Width="200"
+                        HorizontalAlignment="Left"
+                        Margin="20 0 0 0"
+                        Background="#FD7E7E"
+                        BorderThickness="0"
+                        BorderBrush="Transparent"
+                        CornerRadius="2"
+                        Height="65">
+
+                        <DockPanel>
+                            <Image Source="../img/trashIcon.png"
+                                   Width="25"
+                                   Margin="30 0 0 0"></Image>
+                            
+                            <Button Background="Transparent"
+                                Content="Hapus"
+                                FontSize="20pt"
+                                FontWeight="Bold"
+                                Foreground="white"
+                                BorderThickness="0"
+                                Width="100"
+                                Margin="0 0 20 0"
+                                BorderBrush="Transparent"
+                                x:Name="btnDeleteBarang" Click="btnTambahMasuk_Click" MouseDown="btnTambahMasuk_MouseDown"></Button>
+                        </DockPanel>
+                        
+                    </Border>
+                </DockPanel>
+                
             </Grid>
 
             <Grid Grid.Column="1">
@@ -84,10 +125,11 @@
                       Height="600"
                       x:Name="dgBarangMasuk"/>
 
+            <!-- tambah barang page-->
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
                     Opacity="1"
-                    Visibility="Visible">
+                    Visibility="Hidden">
 
                 <Border Width="850"
                     Height="600" 
@@ -147,8 +189,9 @@
                                                 BorderThickness="0"
                                                 Padding="10 10 0 5"
                                                 Margin="40 0 0 0"
-                                                Height="40" SelectedDateChanged="dtpTglMsk_SelectedDateChanged"></DatePicker>       
-                                    <TextBlock Text="{Binding ElementName=dtpTglMsk, Path=SelectedDate, StringFormat={}{0:yyyy-MM-dd}}"/>
+                                                Height="40" SelectedDateChanged="dtpTglMsk_SelectedDateChanged"></DatePicker>
+                                    
+                                    <!--<TextBlock Text="{Binding ElementName=dtpTglMsk, Path=SelectedDate, StringFormat={}{0:yyyy-MM-dd}}"/>-->
                                     
                                 </DockPanel>
 
@@ -231,8 +274,8 @@
                                     <RowDefinition Height="35"></RowDefinition>
                                     <RowDefinition Height="60"></RowDefinition>
                                     <RowDefinition Height="20"></RowDefinition>
-                                    <RowDefinition Height="150"></RowDefinition>
-                                    <RowDefinition Height="150"></RowDefinition>
+                                    <RowDefinition Height="180"></RowDefinition>
+                                    <RowDefinition Height="140"></RowDefinition>
                                     <RowDefinition Height="60"></RowDefinition>
                                     <RowDefinition Height="*"></RowDefinition>
                                 </Grid.RowDefinitions>
@@ -258,7 +301,7 @@
 
                                 <DockPanel Grid.Row="3" 
                                            VerticalAlignment="Center"
-                                           Height="150">
+                                           Height="180">
 
                                     <Label Content="Foto Barang"
                                            Margin="40 0 0 0"
@@ -269,16 +312,32 @@
                                     <Border Width="220"
                                             Background="#ECECEC"
                                             BorderThickness="0"
-                                            CornerRadius="5">
+                                            CornerRadius="5"
+                                            Height="180">
 
-                                        <Image x:Name="imgFoto" 
-                                               Source="{Binding}" 
-                                               Height="140" 
-                                               Width="130" 
-                                               HorizontalAlignment="Left"
-                                               Margin="43,0,0,0"/>
+                                        <StackPanel>
+                                            <Image x:Name="imgFoto" 
+                                                   Source="{Binding}" 
+                                                   Height="130" 
+                                                   Width="120" 
+                                                   HorizontalAlignment="Left"
+                                                   Margin="50,5,0,10"/>
+
+                                            <Border Width="70"
+                                                    Height="25"
+                                                    Margin="0 0 0 0"
+                                                    CornerRadius="2"
+                                                    BorderThickness="0.5"
+                                                    BorderBrush="#AE94E7"
+                                                    Background="#D5C6F5">
+
+                                                <Button x:Name="btnBrowse"                                                    
+                                                    Content="Browse"
+                                                    Background="Transparent"
+                                                    BorderThickness="0" Click="btnBrowse_Click"></Button>
+                                            </Border>
+                                        </StackPanel>
                                     </Border>
-
                                 </DockPanel>
 
                                 <DockPanel Grid.Row="5" HorizontalAlignment="Right">

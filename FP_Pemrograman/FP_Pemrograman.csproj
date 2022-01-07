@@ -12,10 +12,12 @@
     <None Remove="img\dashboard_icon.png" />
     <None Remove="img\help_icon.png" />
     <None Remove="img\income_icon.png" />
+    <None Remove="img\insertData.png" />
     <None Remove="img\logout_icon.png" />
     <None Remove="img\mail_icon.png" />
     <None Remove="img\statistic_icon.png" />
     <None Remove="img\stocks_icon.png" />
+    <None Remove="img\tambahData.png" />
     <None Remove="img\Thrift Shop.png" />
   </ItemGroup>
 
@@ -39,6 +41,9 @@
     <Resource Include="img\income_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="img\insertData.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\logout_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -49,6 +54,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\stocks_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\tambahData.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\Thrift Shop.png">

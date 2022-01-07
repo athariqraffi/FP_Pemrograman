@@ -84,10 +84,11 @@
                       Height="600"
                       x:Name="dgSupplier"/>
 
+            <!-- Supplier page-->
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
                     Opacity="1"
-                    Visibility="Visible">
+                    Visibility="Hidden">
 
                 <Border Width="850"
                     Height="600" 
