@@ -37,7 +37,6 @@
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
@@ -70,7 +69,7 @@
                            VerticalAlignment="Center"></Label>
             </DockPanel>
 
-            <DockPanel Grid.Row="3" x:Name="menuDataBarang">
+            <DockPanel Grid.Row="3" x:Name="menuDataBarang" MouseLeftButtonDown="menuDataBarang_MouseLeftButtonDown">
                 <Image Source="../img/dataIcon.png"
                            Width="35"
                            Margin="50 0 0 0"></Image>
@@ -83,7 +82,7 @@
 
             </DockPanel>
 
-            <DockPanel Grid.Row="4" x:Name="menuDataSupplier">
+            <DockPanel Grid.Row="4" x:Name="menuDataSupplier" MouseLeftButtonDown="menuDataSupplier_MouseLeftButtonDown">
                 <Image Source="../img/dataIcon.png"
                            Width="35"
                            Margin="50 0 0 0"></Image>
@@ -96,19 +95,8 @@
 
             </DockPanel>
 
-            <DockPanel Grid.Row="5" x:Name="menuHelps" MouseLeftButtonDown="menuHelps_MouseLeftButtonDown">
-                <Image Source="../img/help_icon.png"
-                           Width="35"
-                           Margin="50 0 0 0"></Image>
 
-                <Label Content="Helps"
-                           FontSize="20pt"
-                           FontWeight="Normal"
-                           Margin="10 0 0 0"
-                           VerticalAlignment="Center"></Label>
-            </DockPanel>
-
-            <DockPanel Grid.Row="8" x:Name="menuLogout">
+            <DockPanel Grid.Row="6" x:Name="menuLogout">
                 <Image Source="../img/logout_icon.png"
                            Width="30"
                            Margin="50 0 0 0"></Image>
@@ -154,24 +142,102 @@
                                VerticalAlignment="Center"
                                FontSize="20"
                                FontWeight="SemiBold"></Label>
+                        
+                        <Button x:Name="btnProfile"
+                                Background="Transparent"
+                                Margin="30 0 0 0"
+                                BorderThickness="0" Click="btnProfile_Click">
 
-                        <Image Source="../img/mail_icon.png"
-                               Width="40"
-                               Margin="30 0 0 0"></Image>
-
-                        <Ellipse Width="50" Height="50" Margin="30 0 0 0">
-                            <Ellipse.Fill>
-                                <ImageBrush ImageSource="../img/admin_pic.png"></ImageBrush>
-                            </Ellipse.Fill>
-                        </Ellipse>
+                            <Ellipse Width="50" 
+                                     Height="50" >
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="../img/admin_pic.png"></ImageBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Button>
                     </DockPanel>
                 </Grid>
             </Grid>
 
+            <!--drop down profile-->
             <Grid Grid.Row="1">
+                <Canvas x:Name="popProfile"
+                        Background="#FFFF"
+                        Width="200"
+                        Height="120"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        Margin="0 20 20 0"
+                        Visibility="Hidden"
+                        Panel.ZIndex="1">
+
+                    <Grid Width="200"
+                          Height="200">
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="66"></RowDefinition>
+                            <RowDefinition Height="66"></RowDefinition>
+                            <RowDefinition Height="66"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Border BorderBrush="#CBB9FC"
+                                    BorderThickness="1.5">
+                                
+                                <DockPanel x:Name="drpProfile" MouseLeftButtonDown="drpProfile_MouseLeftButtonDown">
+                                    <Image Source="../img/userIcon.png"
+                                       Width="30"
+                                       Margin="10 0 0 0"></Image>
+
+                                    <Label Content="Profile Akun"
+                                       VerticalContentAlignment="Center"
+                                       Margin="10 0 0 0"
+                                       FontSize="12pt"></Label>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Border BorderBrush="#CBB9FC"
+                                    BorderThickness="1.5">
+                                
+                                <DockPanel x:Name="drpHelp" MouseLeftButtonDown="drpHelp_MouseLeftButtonDown">
+                                    <Image Source="../img/help_icon.png"
+                                       Width="30"
+                                       Margin="10 0 0 0"></Image>
+
+                                    <Label Content="Help"
+                                       VerticalContentAlignment="Center"
+                                       Margin="10 0 0 0"
+                                       FontSize="12pt"></Label>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Row="2">
+                            <Border BorderBrush="#CBB9FC"
+                                    BorderThickness="1.5">
+                                
+                                <DockPanel x:Name="drpLogout" MouseLeftButtonDown="drpLogout_MouseLeftButtonDown">
+                                    <Image Source="../img/logout_icon.png"
+                                       Width="24"
+                                       Margin="13 0 0 0"></Image>
+
+                                    <Label Content="Logout"
+                                       VerticalContentAlignment="Center"
+                                       Margin="14 0 0 0"
+                                       FontSize="12pt"></Label>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    
+                </Canvas>
+                
                 <Frame x:Name="frmMain"
                        NavigationUIVisibility="Hidden"
-                       Margin="30">
+                       Margin="30"
+                       Panel.ZIndex="2">
                 </Frame>
             </Grid>
         </Grid>

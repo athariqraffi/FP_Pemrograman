@@ -36,5 +36,43 @@ namespace FP_Pemrograman.View
         {
             frmMain.Navigate(new HelpPage());
         }
+
+        private void btnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            if (popProfile.Visibility == Visibility.Visible)
+            {
+                popProfile.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                popProfile.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void drpProfile_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frmMain.Navigate(new ProfilePage());
+        }
+
+        private void drpHelp_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frmMain.Navigate(new HelpPage());
+
+        }
+
+        private void drpLogout_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void menuDataBarang_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frmMain.Navigate(new BarangMasukPage());
+        }
+
+        private void menuDataSupplier_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frmMain.Navigate(new SupplierPage());
+        }
     }
 }

@@ -7,9 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\addIcon.png" />
     <None Remove="img\Admin - side.png" />
     <None Remove="img\admin_pic.PNG" />
     <None Remove="img\dashboard_icon.png" />
+    <None Remove="img\dataIcon.png" />
     <None Remove="img\help_icon.png" />
     <None Remove="img\income_icon.png" />
     <None Remove="img\insertData.png" />
@@ -19,6 +21,8 @@
     <None Remove="img\stocks_icon.png" />
     <None Remove="img\tambahData.png" />
     <None Remove="img\Thrift Shop.png" />
+    <None Remove="img\trashIcon.png" />
+    <None Remove="img\userIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="img\addIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\Admin - side.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -33,6 +40,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\dashboard_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\dataIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\help_icon.png">
@@ -60,6 +70,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\Thrift Shop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\trashIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\userIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
