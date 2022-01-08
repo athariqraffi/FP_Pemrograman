@@ -30,6 +30,7 @@ namespace FP_Pemrograman.Controller
             barang.nama_barang = barangpage.txtNamaBrng.Text;
             barang.tanggal = barangpage.dtpTglMsk.SelectedDate.Value.ToString("yyyy-MM-dd");
             barang.harga = barangpage.txtHargaBrng.Text;
+            barang.foto = barangpage.txtIdBrng.Text + ".jpg";
           
             if (barang.InsertBarang())
             {
@@ -40,6 +41,15 @@ namespace FP_Pemrograman.Controller
                 MessageBox.Show("Data Gagal Dimasukan");
             }
 
+        }
+
+        public void populateSupplier()
+        {
+            DataSet ds = supplier.getAllSupplier();
+
+            barangpage.cmbSupplier.ItemsSource = ds.Tables[0].DefaultView;
+            barangpage.cmbSupplier.DisplayMemberPath = "nama_supplier";
+            barangpage.cmbSupplier.SelectedValuePath = "id_supplier";
         }
     }
 }

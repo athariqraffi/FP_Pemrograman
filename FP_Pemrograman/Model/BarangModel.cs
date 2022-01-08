@@ -19,12 +19,14 @@ namespace FP_Pemrograman.Model
         public BarangModel()
         {
             barang = new ModelTemplateQuery();
+            
         }
 
         public bool InsertBarang()
         {
-            string query = "insert into barang values(" + id_barang + "," + id_supplier + ",'" + nama_barang + "'," + tanggal + "," + harga + ", 'babi'" + ")";
-            return barang.customNonQuery(query);
+            string tabel = "barang";
+            string data = "'" + id_barang + "', '"+id_supplier + "','" + nama_barang +"','" + tanggal +"','" + harga +"','" + foto + "'";
+            return barang.Insert(tabel, data);
         }
     }
 }

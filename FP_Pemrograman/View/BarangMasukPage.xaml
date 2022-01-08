@@ -128,7 +128,7 @@
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
                     Opacity="1"
-                    Visibility="Hidden">
+                    Visibility="Visible">
 
                 <Border Width="850"
                     Height="600" 
@@ -184,14 +184,10 @@
 
                                     <DatePicker x:Name="dtpTglMsk"
                                                 Background="#ECECEC"
-                                                SelectedDateFormat="Short"
                                                 BorderThickness="0"
                                                 Padding="10 10 0 5"
                                                 Margin="40 0 0 0"
-                                                Height="40" SelectedDateChanged="dtpTglMsk_SelectedDateChanged"></DatePicker>
-                                    
-                                    <!--<TextBlock Text="{Binding ElementName=dtpTglMsk, Path=SelectedDate, StringFormat={}{0:yyyy-MM-dd}}"/>-->
-                                    
+                                                Height="40"/>
                                 </DockPanel>
 
                                 <!--Id barang-->
