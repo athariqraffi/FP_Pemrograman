@@ -80,4 +80,8 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FotoBarang\" />
+  </ItemGroup>
+
 </Project>

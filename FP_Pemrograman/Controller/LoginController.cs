@@ -19,7 +19,6 @@ namespace FP_Pemrograman.Controller
         {
             user.id_admin = login.txtUsername.Text;
             user.password = login.txtPassword.Password;
-
             bool result = user.CekLogin();
 
             if (result)
@@ -35,7 +34,6 @@ namespace FP_Pemrograman.Controller
                 login.txtUsername.Text = "";
                 login.txtUsername.Focus();
                 login.txtPassword.Password = "";
-
             }
         }
     }

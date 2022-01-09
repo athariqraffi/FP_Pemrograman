@@ -19,6 +19,7 @@ namespace FP_Pemrograman.Controller
         { 
             barang = new Model.BarangModel();
             supplier = new Model.SupplierModel();
+
             this.barangpage = barangpage;
         }
 
@@ -41,12 +42,13 @@ namespace FP_Pemrograman.Controller
             if (barang.InsertBarang())
             {
                 MessageBox.Show("Data Berhasil Dimasukan");
+                barangpage.popTambah.Visibility = Visibility.Hidden;
             }
             else
             {
                 MessageBox.Show("Data Gagal Dimasukan");
             }
-
+            
         }
 
         public void populateSupplier()

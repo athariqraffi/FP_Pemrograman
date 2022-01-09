@@ -33,6 +33,10 @@ namespace FP_Pemrograman.View
 
         private void btnSimpanBrng_Click(object sender, RoutedEventArgs e)
         {
+            string filename = txtIdBrng.Text + ".jpg";
+            string path = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName +
+                "\\FotoBarang\\" + filename;
+            System.IO.File.Copy(openFile.FileName, path, true);
             barang.InsertController();
         }
 
