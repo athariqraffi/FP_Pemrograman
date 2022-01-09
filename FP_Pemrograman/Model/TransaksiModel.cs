@@ -8,9 +8,6 @@ namespace FP_Pemrograman.Model
 {
     class TransaksiModel
     {
-        
 
-        
-       
     }
 }

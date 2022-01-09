@@ -74,7 +74,7 @@
                             <Image Source="../img/trashIcon.png"
                                    Width="25"
                                    Margin="30 0 0 0"></Image>
-                            
+
                             <Button Background="Transparent"
                                 Content="Hapus"
                                 FontSize="20pt"
@@ -86,10 +86,10 @@
                                 BorderBrush="Transparent"
                                 x:Name="btnDeleteBarang" Click="btnTambahMasuk_Click" MouseDown="btnTambahMasuk_MouseDown"></Button>
                         </DockPanel>
-                        
+
                     </Border>
                 </DockPanel>
-                
+
             </Grid>
 
             <Grid Grid.Column="1">
@@ -117,18 +117,64 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <DataGrid Width="1490"
+            <!-- <DataGrid Width="1490"
                       HorizontalAlignment="Left"
                       VerticalAlignment="Top"
                       Margin="20 50 0 0"
                       Height="600"
-                      x:Name="dgBarangMasuk"/>
+                      x:Name="dgBarangMasuk"/> -->
+            <StackPanel Margin="50">
+                <ItemsControl x:Name="ListViewBarang" ItemsSource="{Binding}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="199" Margin="10">
+                                <Border Width="199" Height="109" CornerRadius="10" Background="White">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="1"/>
+                                    </Border.Effect>
+                                </Border>
+                                <Border Width="199" Height="109" CornerRadius="10">
+                                    <Grid Margin="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="center">
+                                            <TextBlock Text="{Binding nama_barang}" FontSize="10"/>
+                                        </StackPanel>
+                                        <Border BorderThickness=".5" BorderBrush="black" Grid.Row="1"/>
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="Babi" VerticalAlignment="Center" HorizontalAlignment="center"/>
+                                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                                <TextBlock Text="Nama Barang:" FontSize="7" Padding="2"/>
+                                                <TextBlock Text="Tanggal Masuk:" FontSize="7" Padding="2"/>
+                                                <TextBlock Text="Harga Jual:" FontSize="7" Padding="2"/>
+                                                <TextBlock Text="Status:" FontSize="7" Padding="2"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </StackPanel>
 
             <!-- tambah barang page-->
             <Canvas x:Name="popTambah"
                     Background="#A8A8A8"
                     Opacity="1"
-                    Visibility="Visible">
+                    Visibility="Hidden">
 
                 <Border Width="850"
                     Height="600" 
@@ -368,7 +414,7 @@
                     </Grid>
                 </Border>
             </Canvas>
-            
+
         </Grid>
     </Grid>
 </Page>

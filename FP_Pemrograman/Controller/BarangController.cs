@@ -22,6 +22,12 @@ namespace FP_Pemrograman.Controller
             this.barangpage = barangpage;
         }
 
+        public void loadBarang()
+        {
+            DataSet data = barang.getAllBarang();
+            barangpage.ListViewBarang.ItemsSource = data.Tables[0].DefaultView;
+        }
+
         public void InsertController()
         {
 

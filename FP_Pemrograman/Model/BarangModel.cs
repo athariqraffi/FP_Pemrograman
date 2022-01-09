@@ -22,6 +22,12 @@ namespace FP_Pemrograman.Model
             
         }
 
+        public DataSet getAllBarang()
+        {
+            string tabel = "barang";
+            return barang.Select(tabel);
+        }
+
         public bool InsertBarang()
         {
             string tabel = "barang";

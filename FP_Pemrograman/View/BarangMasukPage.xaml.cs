@@ -27,6 +27,7 @@ namespace FP_Pemrograman.View
             InitializeComponent();
             barang = new Controller.BarangController(this);
             barang.populateSupplier();
+            barang.loadBarang();
             openFile = new Microsoft.Win32.OpenFileDialog();
         }
 
