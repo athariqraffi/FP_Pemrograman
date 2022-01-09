@@ -123,52 +123,55 @@
                       Margin="20 50 0 0"
                       Height="600"
                       x:Name="dgBarangMasuk"/> -->
-            <StackPanel Margin="50">
-                <ItemsControl x:Name="ListViewBarang" ItemsSource="{Binding}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Width="199" Margin="10">
-                                <Border Width="199" Height="109" CornerRadius="10" Background="White">
-                                    <Border.Effect>
-                                        <DropShadowEffect ShadowDepth="1"/>
-                                    </Border.Effect>
-                                </Border>
-                                <Border Width="199" Height="109" CornerRadius="10">
-                                    <Grid Margin="5">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="25"/>
-                                            <RowDefinition Height="1"/>
-                                            <RowDefinition Height="*"/>
-                                        </Grid.RowDefinitions>
-                                        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="center">
-                                            <TextBlock Text="{Binding nama_barang}" FontSize="10"/>
-                                        </StackPanel>
-                                        <Border BorderThickness=".5" BorderBrush="black" Grid.Row="1"/>
-                                        <Grid Grid.Row="2">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="60"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="0" Text="Babi" VerticalAlignment="Center" HorizontalAlignment="center"/>
-                                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                                                <TextBlock Text="Nama Barang:" FontSize="7" Padding="2"/>
-                                                <TextBlock Text="Tanggal Masuk:" FontSize="7" Padding="2"/>
-                                                <TextBlock Text="Harga Jual:" FontSize="7" Padding="2"/>
-                                                <TextBlock Text="Status:" FontSize="7" Padding="2"/>
+            <ScrollViewer>
+            <StackPanel Margin="50" HorizontalAlignment="Center">
+                    <ItemsControl x:Name="ListViewBarang" ItemsSource="{Binding}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="400" Margin="10">
+                                    <Border Width="400" Height="199" CornerRadius="10" Background="White">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="1"/>
+                                        </Border.Effect>
+                                    </Border>
+                                    <Border Width="400" Height="199" CornerRadius="10">
+                                        <Grid Margin="5">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="25"/>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="center">
+                                                <TextBlock Text="{Binding nama_barang}" FontSize="10"/>
                                             </StackPanel>
+                                            <Border BorderThickness=".5" BorderBrush="black" Grid.Row="1"/>
+                                            <Grid Grid.Row="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="60"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Text="Babi" VerticalAlignment="Center" HorizontalAlignment="center"/>
+                                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                                    <TextBlock Text="Nama Barang:" FontSize="7" Padding="2"/>
+                                                    <TextBlock Text="Tanggal Masuk:" FontSize="7" Padding="2"/>
+                                                    <TextBlock Text="Harga Jual:" FontSize="7" Padding="2"/>
+                                                    <TextBlock Text="Status:" FontSize="7" Padding="2"/>
+                                                </StackPanel>
+                                            </Grid>
                                         </Grid>
-                                    </Grid>
-                                </Border>
-                            </Grid>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </StackPanel>
+                                    </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+                
+            </ScrollViewer>
 
             <!-- tambah barang page-->
             <Canvas x:Name="popTambah"
