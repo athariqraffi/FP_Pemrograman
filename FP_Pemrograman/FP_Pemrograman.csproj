@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FotoBarang\1.jpg" />
+    <None Remove="FotoBarang\3.jpg" />
     <None Remove="img\addIcon.png" />
     <None Remove="img\Admin - side.png" />
     <None Remove="img\admin_pic.PNG" />
@@ -30,6 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="FotoBarang\1.jpg" />
+    <Resource Include="FotoBarang\3.jpg" />
     <Resource Include="img\addIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -78,10 +82,6 @@
     <Resource Include="img\userIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="FotoBarang\" />
   </ItemGroup>
 
 </Project>

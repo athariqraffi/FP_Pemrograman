@@ -26,6 +26,12 @@ namespace FP_Pemrograman.Controller
         public void loadBarang()
         {
             DataSet data = barang.getAllBarang();
+            string[] namafile = new string[100];
+            for(int i = 0; i < data.Tables[0].Rows.Count; i++)
+            {
+                namafile[i] = data.Tables[0].Rows[i]["foto"].ToString();
+                data.Tables[0].Rows[i]["foto"] = "/FotoBarang/" + namafile[i];
+            }
             barangpage.ListViewBarang.ItemsSource = data.Tables[0].DefaultView;
         }
 

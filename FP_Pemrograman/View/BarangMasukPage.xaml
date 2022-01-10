@@ -124,7 +124,7 @@
                       Height="600"
                       x:Name="dgBarangMasuk"/> -->
             <ScrollViewer>
-            <StackPanel Margin="50" HorizontalAlignment="Center">
+                <StackPanel Margin="50" HorizontalAlignment="Center">
                     <ItemsControl x:Name="ListViewBarang" ItemsSource="{Binding}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -150,12 +150,20 @@
                                                     <ColumnDefinition Width="60"/>
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
-                                                <TextBlock Grid.Column="0" Text="Babi" VerticalAlignment="Center" HorizontalAlignment="center"/>
+                                                <Image Source="{Binding foto}"/>
                                                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                                                    <TextBlock Text="Nama Barang:" FontSize="7" Padding="2"/>
-                                                    <TextBlock Text="Tanggal Masuk:" FontSize="7" Padding="2"/>
-                                                    <TextBlock Text="Harga Jual:" FontSize="7" Padding="2"/>
-                                                    <TextBlock Text="Status:" FontSize="7" Padding="2"/>
+                                                    <DockPanel>
+                                                        <TextBlock Text="Nama Barang:" FontSize="12" Padding="2"/>
+                                                        <TextBlock Text="{Binding foto}" FontSize="12" Padding="2"/>
+                                                    </DockPanel>
+                                                    <DockPanel>
+                                                        <TextBlock Text="Tanggal Masuk:" FontSize="12" Padding="2"/>
+                                                        <TextBlock Text="{Binding tanggal}" FontSize="12" Padding="2"/>
+                                                    </DockPanel>
+                                                    <DockPanel>
+                                                        <TextBlock Text="Harga Jual:" FontSize="12" Padding="2"/>
+                                                        <TextBlock Text="{Binding harga}" FontSize="12" Padding="2"/>
+                                                    </DockPanel>
                                                 </StackPanel>
                                             </Grid>
                                         </Grid>
@@ -170,7 +178,7 @@
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
                 </StackPanel>
-                
+
             </ScrollViewer>
 
             <!-- tambah barang page-->
