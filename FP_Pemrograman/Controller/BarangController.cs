@@ -27,10 +27,12 @@ namespace FP_Pemrograman.Controller
         {
             DataSet data = barang.getAllBarang();
             string[] namafile = new string[100];
-            for(int i = 0; i < data.Tables[0].Rows.Count; i++)
+            string currentPath = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            for (int i = 0; i < data.Tables[0].Rows.Count; i++)
             {
                 namafile[i] = data.Tables[0].Rows[i]["foto"].ToString();
                 data.Tables[0].Rows[i]["foto"] = "/FotoBarang/" + namafile[i];
+                data.Tables[0].Rows[i]["foto"] = currentPath + "\\Fotobarang\\" + namafile[i];
             }
             barangpage.ListViewBarang.ItemsSource = data.Tables[0].DefaultView;
         }
@@ -49,6 +51,7 @@ namespace FP_Pemrograman.Controller
             {
                 MessageBox.Show("Data Berhasil Dimasukan");
                 barangpage.popTambah.Visibility = Visibility.Hidden;
+                
             }
             else
             {
