@@ -76,7 +76,7 @@
                                    Margin="30 0 0 0"></Image>
 
                             <Button Background="Transparent"
-                                Content="Hapus"
+                                Content="Preview"
                                 FontSize="20pt"
                                 FontWeight="Bold"
                                 Foreground="white"
@@ -84,9 +84,8 @@
                                 Width="100"
                                 Margin="0 0 20 0"
                                 BorderBrush="Transparent"
-                                x:Name="btnDeleteBarang" Click="btnTambahMasuk_Click" MouseDown="btnTambahMasuk_MouseDown"></Button>
+                                x:Name="btnPreviewBarang"></Button>
                         </DockPanel>
-
                     </Border>
                 </DockPanel>
 
