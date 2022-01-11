@@ -138,7 +138,7 @@
 
                 <Grid Grid.Column="1">
                     <DockPanel HorizontalAlignment="Right" Margin="0 0 50 0">
-                        <Label Content="Nihao, Azam"
+                        <Label x:Name="lbName"
                                VerticalAlignment="Center"
                                FontSize="20"
                                FontWeight="SemiBold"></Label>

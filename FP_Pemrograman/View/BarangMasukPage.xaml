@@ -150,7 +150,11 @@
                                                     <ColumnDefinition Width="60"/>
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
-                                                <Image Source="{Binding foto}"/>
+                                                <Image>
+                                                    <Image.Source>
+                                                        <BitmapImage UriSource="{Binding foto}"></BitmapImage>
+                                                    </Image.Source>
+                                                </Image>
                                                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
                                                     <DockPanel>
                                                         <TextBlock Text="Nama Barang:" FontSize="12" Padding="2"/>

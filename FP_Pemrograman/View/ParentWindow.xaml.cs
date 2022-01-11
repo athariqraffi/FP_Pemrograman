@@ -15,11 +15,17 @@ namespace FP_Pemrograman.View
     /// <summary>
     /// Interaction logic for ParentWindow.xaml
     /// </summary>
+    /// 
     public partial class ParentWindow : Window
     {
+
+        Controller.ParrentController controller;
+
         public ParentWindow()
         {
             InitializeComponent();
+            controller = new Controller.ParrentController(this);
+            controller.ShowAdminName();
         }
 
         private void menuDashboard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

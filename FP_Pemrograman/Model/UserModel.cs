@@ -20,6 +20,14 @@ namespace FP_Pemrograman.Model
             temp = new ModelTemplateQuery();
         }
 
+        public DataSet getUserById()
+        {
+            string table = "admin";
+            string id_admin = App.Current.Properties["id_admin"].ToString();
+            string kondisi = string.Format("id_admin = '{0}'", id_admin);
+            return temp.Select(table, kondisi);
+        }
+
         public bool CekLogin()
         {
             bool result;
@@ -31,6 +39,7 @@ namespace FP_Pemrograman.Model
             if (dataSet.Tables[0].Rows.Count > 0) //kondisi jika tables memiliki data atau tidak 
             {
                 result = true;
+                App.Current.Properties["id_admin"] = dataSet.Tables[0].Rows[0]["id_admin"].ToString();
             }
             else
             {
