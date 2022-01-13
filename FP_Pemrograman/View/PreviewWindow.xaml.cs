@@ -17,9 +17,37 @@ namespace FP_Pemrograman.View
     /// </summary>
     public partial class PreviewWindow : Window
     {
-        public PreviewWindow()
+
+        Controller.PreviewController controller;
+        View.BarangMasukPage barangpage;
+
+        private string id_user;
+
+        public PreviewWindow(string id_user, View.BarangMasukPage barangpage)
         {
             InitializeComponent();
+            controller = new Controller.PreviewController(this);
+            this.barangpage = barangpage;
+            this.id_user = id_user;
+            controller.LoadPreview(id_user);
+        }
+
+        private void btnHapusBarang_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult confirmation = MessageBox.Show("Apakah anda yakin?", "Konfirmasi Hapus Barang", MessageBoxButton.YesNo);
+            if (confirmation == MessageBoxResult.Yes)
+            {
+                if (controller.deleteBarang(id_user))
+                {
+                    MessageBox.Show("Barang sudah terhapus");
+                    barangpage.RefreshBarang();
+                    Close();
+                } else
+                {
+                    MessageBox.Show("gagal");
+                }
+                
+            }
         }
     }
 }

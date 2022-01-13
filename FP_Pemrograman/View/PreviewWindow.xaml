@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="PreviewWindow" 
         d:DesignHeight="600" d:DesignWidth="850" Background="#FFFF">
-    
+
     <Grid>
         <Canvas x:Name="popPreview"
                     Background="#A8A8A8"
@@ -108,7 +108,7 @@
                                              FontSize="10pt"
                                              Height="40"
                                              Margin="40 0 0 0"
-                                             BorderThickness="0"></TextBox>
+                                             BorderThickness="0" IsReadOnly="True"></TextBox>
                             </DockPanel>
 
                             <!--Nama barang-->
@@ -213,11 +213,12 @@
 
                                     <StackPanel>
                                         <Image x:Name="imgFotoUPdate" 
-                                                   Source="{Binding}" 
+                                                   Source="{Binding}"
                                                    Height="130" 
                                                    Width="120" 
                                                    HorizontalAlignment="Left"
-                                                   Margin="50,5,0,10"/>
+                                                   Margin="50,5,0,10">
+                                        </Image>
 
                                         <Border Width="70"
                                                     Height="25"
@@ -230,7 +231,7 @@
                                             <Button x:Name="btnBrowseUpdate"                                                    
                                                     Content="Browse"
                                                     Background="Transparent"
-                                                    BorderThickness="0" Click="btnBrowse_Click"></Button>
+                                                    BorderThickness="0"></Button>
                                         </Border>
                                     </StackPanel>
                                 </Border>
@@ -247,7 +248,7 @@
                                                 Background="Transparent"
                                                 BorderThickness="0"
                                                 Content="Hapus"
-                                                FontSize="12pt"></Button>
+                                                FontSize="12pt" Click="btnHapusBarang_Click"></Button>
                                 </Border>
 
                                 <Border Width="125"
@@ -261,7 +262,7 @@
                                                 Background="Transparent"
                                                 BorderThickness="0"
                                                 Content="Ubah"
-                                                FontSize="12pt" Click="btnSimpanBrng_Click"></Button>
+                                                FontSize="12pt"></Button>
                                 </Border>
                             </DockPanel>
                         </Grid>

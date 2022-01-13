@@ -139,6 +139,7 @@
                                                 <RowDefinition Height="25"/>
                                                 <RowDefinition Height="1"/>
                                                 <RowDefinition Height="*"/>
+                                                <RowDefinition Height="30"/>
                                             </Grid.RowDefinitions>
                                             <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="center">
                                                 <TextBlock Text="{Binding nama_barang}" FontSize="10"/>
@@ -169,6 +170,16 @@
                                                     </DockPanel>
                                                 </StackPanel>
                                             </Grid>
+                                            <Grid Grid.Row="3">
+                                                <DockPanel HorizontalAlignment="Right">
+                                                    <Button x:Name="btnPreview" BorderThickness="0" Background="Transparent" Click="btnPreview_Click" Tag="{Binding id_barang}">
+                                                        <Border BorderBrush="#9D9CEE" BorderThickness="1" Background="Transparent" CornerRadius="5" Width="64" Height="25" >
+                                                            <TextBlock Text="Preview" Foreground="#9D9CEE" FontSize="12" VerticalAlignment="center" HorizontalAlignment="center"/>
+                                                        </Border>
+                                                    </Button>
+                                                </DockPanel>
+                                            </Grid>
+                                           
                                         </Grid>
                                     </Border>
                                 </Grid>

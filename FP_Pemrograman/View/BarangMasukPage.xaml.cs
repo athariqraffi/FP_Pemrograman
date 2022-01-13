@@ -31,6 +31,11 @@ namespace FP_Pemrograman.View
             openFile = new Microsoft.Win32.OpenFileDialog();
         }
 
+        public void RefreshBarang()
+        {
+            barang.loadBarang();
+        }
+
         private void btnSimpanBrng_Click(object sender, RoutedEventArgs e)
         {
             string filename = txtIdBrng.Text + ".jpg";
@@ -81,6 +86,13 @@ namespace FP_Pemrograman.View
                 bitmap.EndInit();
                 imgFoto.Source = bitmap;
             }
+        }
+
+        private void btnPreview_Click(object sender, RoutedEventArgs e)
+        {
+            string tag = (sender as Button).Tag.ToString();
+            View.PreviewWindow preview = new View.PreviewWindow(tag, this);
+            preview.Show();
         }
     }
 }

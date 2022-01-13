@@ -16,6 +16,8 @@ namespace FP_Pemrograman.Model
         public string harga { get; set; }
         public string foto { get; set; }
 
+        public string tabel = "barang";
+
         public BarangModel()
         {
             barang = new ModelTemplateQuery();
@@ -24,15 +26,29 @@ namespace FP_Pemrograman.Model
 
         public DataSet getAllBarang()
         {
-            string tabel = "barang";
             return barang.Select(tabel);
+        }
+
+        public DataSet GetBarangById(string id)
+        {
+            string kondisi = string.Format("id_barang = '{0}'", id);
+            return barang.Select(tabel, kondisi);
         }
 
         public bool InsertBarang()
         {
-            string tabel = "barang";
             string data = "'" + id_barang + "', '"+id_supplier + "','" + nama_barang +"','" + tanggal +"','" + harga +"','" + foto + "'";
             return barang.Insert(tabel, data);
+        }
+
+        public bool deleteBarang(string id)
+        {
+            string kondisi = string.Format("id_barang = '{0}'", id);
+            if(barang.Delete(tabel, kondisi))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

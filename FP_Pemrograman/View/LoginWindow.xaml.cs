@@ -15,12 +15,14 @@ namespace FP_Pemrograman.View
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
+    
     public partial class LoginWindow : Window
     {
         Controller.LoginController user;
         public LoginWindow()
         {
             InitializeComponent();
+            App.Current.Properties["CURRENT_PATH"] = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
 
             user = new Controller.LoginController(this);
         }

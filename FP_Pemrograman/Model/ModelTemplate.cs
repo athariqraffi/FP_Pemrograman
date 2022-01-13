@@ -118,7 +118,7 @@ namespace FP_Pemrograman.Model
 
             try
             {
-                string query = "DELETE FROM " + tabel + "WHERE " + kondisi;
+                string query = "DELETE FROM " + tabel + " WHERE " + kondisi;
                 conn.Open();
                 command = new SqlCommand();
                 command.Connection = conn;
