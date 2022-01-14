@@ -29,5 +29,17 @@ namespace FP_Pemrograman.View
         {
             supplier.InsertController();
         }
+
+        private void btnAddSupplier_Click(object sender, RoutedEventArgs e)
+        {
+            if (popTambah.Visibility == Visibility.Visible)
+            {
+                popTambah.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                popTambah.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

@@ -56,7 +56,7 @@
                                 Margin="0 0 20 0"
                                 BorderThickness="0"
                                 BorderBrush="Transparent"
-                                x:Name="btnAddSupplier"></Button>
+                                x:Name="btnAddSupplier" Click="btnAddSupplier_Click"></Button>
                         </DockPanel>
                     </Border>
 

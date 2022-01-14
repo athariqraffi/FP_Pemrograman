@@ -19,7 +19,7 @@ namespace FP_Pemrograman.View
     /// </summary>
     public partial class TransaksiPage : Page
     {
-        private Controller.TransaksiController transaksi;
+        Controller.TransaksiController transaksi;
         public TransaksiPage()
         {
             InitializeComponent();
