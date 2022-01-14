@@ -29,10 +29,18 @@ namespace FP_Pemrograman.Model
             }
             else
             {
-                string kondisi = "id_transaksi LIKE '%"+ cari + "%' OR id_barang LIKE '%" + cari + "%' OR tgl_penjulan LIKE '%" + cari + "%' OR jumlah LIKE '%" + cari + "%' OR total_harga LIKE '%" + cari + "%'";
+                string kondisi = "id_transaksi LIKE '%"+ cari + "%' OR id_barang LIKE '%" + cari + "%' OR tgl_penjualan LIKE '%" + cari + "%' OR jumlah LIKE '%" + cari + "%' OR total_harga LIKE '%" + cari + "%'";
                 data = template.Select("transaksi", kondisi);
             }
             return data;
+        }
+        public string JumlahTransaksi(string tanggal)
+        {
+            string result = "0";
+            DataSet ds = new DataSet();
+            ds = template.SelectData("SELECT COUNT(*) FROM transaksi WHERE tgl_penjualan = '" + tanggal + "'", "transaksi");
+            result = ds.Tables[0].Rows[0][0].ToString();
+            return result;
         }
     }
 }

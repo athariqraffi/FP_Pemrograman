@@ -23,5 +23,12 @@ namespace FP_Pemrograman.Controller
             DataSet data = transaksiModel.SelectTransaksi(cari);
             transaksiPage.dgTransaksi.ItemsSource = data.Tables[0].DefaultView;
         }
+
+        public void ShowJumlahTransaksi()
+        {
+            string tanggal = DateTime.Now.ToString("yyyy-MM-dd");
+            transaksiPage.lblTransaksi.Content = transaksiModel.JumlahTransaksi(tanggal);
+
+        }
     }
 }

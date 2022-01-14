@@ -25,6 +25,7 @@ namespace FP_Pemrograman.View
             InitializeComponent();
             transaksi = new Controller.TransaksiController(this);
             transaksi.DataTransaksi();
+            transaksi.ShowJumlahTransaksi();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
