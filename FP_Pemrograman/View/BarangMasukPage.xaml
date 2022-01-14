@@ -150,7 +150,8 @@
                                                     <ColumnDefinition Width="60"/>
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
-                                                <Image>
+                                                <Image Width="80"
+                                                       Height="80">
                                                     <Image.Source>
                                                         <BitmapImage UriSource="{Binding foto}"></BitmapImage>
                                                     </Image.Source>
@@ -179,7 +180,6 @@
                                                     </Button>
                                                 </DockPanel>
                                             </Grid>
-                                           
                                         </Grid>
                                     </Border>
                                 </Grid>
