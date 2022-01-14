@@ -26,6 +26,9 @@ namespace FP_Pemrograman.View
             InitializeComponent();
             controller = new Controller.DashboardController(this);
             controller.Refresh();
+            controller.showincome();
+            controller.showjumlahmasuktoday();
+            controller.DataTransaksi();
         }
     }
 }

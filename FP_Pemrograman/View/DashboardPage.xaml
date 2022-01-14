@@ -141,6 +141,7 @@
                                    Padding="0 0 0 10"></Label>
 
                             <Label Content="0"
+                                   x:Name="lblmasuktoday"
                                    FontSize="44pt"
                                    FontWeight="Bold"
                                    HorizontalContentAlignment="Center"
@@ -174,10 +175,19 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <DataGrid x:Name="dgTerlambat"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="149*"/>
+                    <ColumnDefinition Width="437*"/>
+                    <ColumnDefinition Width="994*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="dgpenjualan"
+                          
+                          ColumnWidth="*"
                           Width="850" 
                           HorizontalAlignment="Left"
-                          Margin="20"/>
+                          Margin="20,20,0,20" Grid.ColumnSpan="3"/>
+                <TextBox HorizontalAlignment="Left" Margin="323,-34,0,0" x:Name="txtCari" FontSize="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" Height="28" Grid.ColumnSpan="2" Grid.Column="1"/>
+                <Button Content="Cari" HorizontalAlignment="Left" FontSize="20" Margin="108,-34,0,0" VerticalAlignment="Top" Grid.Column="2" Height="28" Width="64"/>
             </Grid>
 
         </Grid>
