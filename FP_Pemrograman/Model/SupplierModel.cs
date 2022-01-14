@@ -32,8 +32,7 @@ namespace FP_Pemrograman.Model
 
         public bool InsertSupplier()
         {
-            
-            string data = "'" + id_supplier + "','" + nama_supplier + "','" + no_hp + "','" + alamat + "','" + email + "'";
+            string data = string.Format("'{0}', '{1}', '{2}', '{3}'", id_supplier, nama_supplier, no_hp, alamat);
             return temp.Insert("supplier", data);
         }
     }

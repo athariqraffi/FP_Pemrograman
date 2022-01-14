@@ -17,8 +17,15 @@ namespace FP_Pemrograman.Controller
         {
             supplier = new Model.SupplierModel();
             this.supplierpage = supplierPage;
-
+            loadSupplier();
         }
+
+        public void loadSupplier()
+        {
+            DataSet ds = supplier.getAllSupplier();
+            supplierpage.dgSupplier.ItemsSource = ds.Tables[0].DefaultView;
+        }
+
         public void InsertController()
         {
 
@@ -32,6 +39,8 @@ namespace FP_Pemrograman.Controller
             if (supplier.InsertSupplier())
             {
                 MessageBox.Show("Data Berhasil Dimasukan");
+                supplierpage.popTambah.Visibility = Visibility.Hidden;
+                loadSupplier();
             }
             else
             {

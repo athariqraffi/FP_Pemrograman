@@ -22,7 +22,7 @@ namespace FP_Pemrograman.Model
         {
             conn = new SqlConnection();
 
-            conn.ConnectionString = "Data Source = MSI" +
+            conn.ConnectionString = "Data Source = DESKTOP-KS8FOVV;" +
                                     "Initial Catalog = projectakhirfinalfinal;" +
                                     "Integrated Security = True";
             return conn;
@@ -36,30 +36,30 @@ namespace FP_Pemrograman.Model
             GetConnection();
 
             DataSet dataSet = new DataSet();
+            conn.Open();
+            command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandType = CommandType.Text;
 
-            try
+            if (kondisi == "")
             {
-                conn.Open();
-                command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandType = CommandType.Text;
+                command.CommandText = "SELECT * FROM " + tabel;
+            }
+            else
+            {
+                command.CommandText = "SELECT * FROM " + tabel + " WHERE " + kondisi;
+            }
 
-                if (kondisi == "")
-                {
-                    command.CommandText = "SELECT * FROM " + tabel;
-                }
-                else
-                {
-                    command.CommandText = "SELECT * FROM " + tabel + " WHERE " + kondisi;
-                }
-
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                dataAdapter.Fill(dataSet, tabel);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            dataAdapter.Fill(dataSet, tabel);
+           /* try
+            {
+               
             }
             catch (SqlException)
             {
                 dataSet = null;
-            }
+            }*/
 
             conn.Close();
             return dataSet;
@@ -70,20 +70,22 @@ namespace FP_Pemrograman.Model
             GetConnection();
             result = false;
 
-            try
+            string query = "INSERT INTO " + tabel + " VALUES (" + data + ")";
+            conn.Open();
+            command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = query;
+            command.ExecuteNonQuery();
+            result = true;
+
+          /*  try
             {
-                string query = "INSERT INTO " + tabel + " VALUES (" + data + ")";
-                conn.Open();
-                command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandText = query;
-                command.ExecuteNonQuery();
-                result = true;
+                
             }
             catch (SqlException)
             {
                 result = false;
-            }
+            }*/
             conn.Close();
             return result;
         }

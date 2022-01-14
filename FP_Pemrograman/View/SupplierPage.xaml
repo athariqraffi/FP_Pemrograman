@@ -88,7 +88,7 @@
                     </Border>
 
                 </DockPanel>
-                
+
             </Grid>
 
             <Grid Grid.Column="1">
@@ -117,11 +117,29 @@
 
         <Grid Grid.Row="2">
             <DataGrid Width="1490"
-                      HorizontalAlignment="Left"
+                      HorizontalAlignment="Center"
                       VerticalAlignment="Top"
-                      Margin="20 50 0 0"
+                      Margin="0 50 0 0"
                       Height="600"
-                      x:Name="dgSupplier"/>
+                      x:Name="dgSupplier"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding}">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Width" Value="372.5"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID Supplier" Binding="{Binding id_supplier}"/>
+                    <DataGridTextColumn Header="Nama Supplier" Binding="{Binding nama_supplier}"/>
+                    <DataGridTextColumn Header="No HP" Binding="{Binding no_hp}"/>
+                    <DataGridTextColumn Header="Alamat" Binding="{Binding alamat}"/>
+                </DataGrid.Columns>
+            </DataGrid>
 
             <!-- Supplier page-->
             <Canvas x:Name="popTambah"
@@ -180,7 +198,7 @@
                                            VerticalContentAlignment="Center"
                                            FontSize="11pt"
                                            Width="120"></Label>
-                                    
+
                                     <TextBox x:Name="txtIdSupply"
                                              Background="#ECECEC"
                                              Padding="10 10 0 5"

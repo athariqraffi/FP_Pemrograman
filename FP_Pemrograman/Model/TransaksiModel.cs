@@ -25,7 +25,7 @@ namespace FP_Pemrograman.Model
             DataSet data = new DataSet();
             if (cari == "")
             {
-                data = template.Select("transaksi", null);
+                data = template.Select("transaksi", "");
             }
             else
             {
