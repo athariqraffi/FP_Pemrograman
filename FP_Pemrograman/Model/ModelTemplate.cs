@@ -22,7 +22,7 @@ namespace FP_Pemrograman.Model
         {
             conn = new SqlConnection();
 
-            conn.ConnectionString = "Data Source = DESKTOP-CA6UQE7\\WIDIXON;" +
+            conn.ConnectionString = "Data Source = MSI" +
                                     "Initial Catalog = projectakhirfinalfinal;" +
                                     "Integrated Security = True";
             return conn;
