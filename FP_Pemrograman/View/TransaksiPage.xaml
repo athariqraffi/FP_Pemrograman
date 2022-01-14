@@ -39,16 +39,13 @@
                            Padding="20 0 0 0"
                            VerticalContentAlignment="Center"></Label>
 
-                    <TextBox Text="0"
-                             x:Name="txtJmlTrans"
-                             Width="80"
-                             Margin="0 0 0 0"
-                             FontSize="18pt"
-                             FontWeight="SemiBold"
-                             BorderThickness="0"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Center"
-                             HorizontalAlignment="Left"></TextBox>
+                    <Label x:Name="lblTransaksi"
+                                   Content="0"
+                                   FontSize="44pt"
+                                   FontWeight="Bold"
+                                   HorizontalContentAlignment="Left"
+                                   VerticalContentAlignment="Center"
+                                   Margin="0 0 0 0" Height="77"></Label>
                 </DockPanel>
             </Grid>
 
@@ -81,8 +78,8 @@
                       AutoGenerateColumns="False"
                       HorizontalAlignment="Left"
                       VerticalAlignment="Top"
-                      Margin="31,10,0,0"
-                      Height="561"
+                      Margin="31,76,0,0"
+                      Height="583"
                       x:Name="dgTransaksi" ItemsSource="{Binding}" ColumnWidth="*">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID Transaksi" Binding="{Binding Path=id_transaksi}"/>

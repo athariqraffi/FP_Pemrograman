@@ -22,7 +22,7 @@ namespace FP_Pemrograman.Model
         {
             conn = new SqlConnection();
 
-            conn.ConnectionString = "Data Source = DESKTOP-KS8FOVV;" +
+            conn.ConnectionString = "Data Source = DESKTOP-CA6UQE7\\WIDIXON;" +
                                     "Initial Catalog = projectakhirfinalfinal;" +
                                     "Integrated Security = True";
             return conn;
@@ -122,6 +122,21 @@ namespace FP_Pemrograman.Model
             }*/
             conn.Close();
             return result;
+        }
+
+        public DataSet SelectData(string query, string tabel)
+        {
+            DataSet ds = new DataSet();
+            conn.Open();
+            command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandType = CommandType.Text;
+            command.CommandText = query;
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            sda.Fill(ds, tabel);
+           
+            conn.Close();
+            return ds;
         }
 
         public Boolean Update(string tabel, string data, string kondisi) //update data (update)
