@@ -65,6 +65,40 @@ namespace FP_Pemrograman.Model
             return dataSet;
         }
 
+        public DataSet CustomSelect(string tabel, string data, string kondisi = "")
+        {
+            GetConnection();
+
+            DataSet dataSet = new DataSet();
+            conn.Open();
+            command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandType = CommandType.Text;
+
+            if (kondisi == "")
+            {
+                command.CommandText = "SELECT " + data + " FROM " + tabel;
+            }
+            else
+            {
+                command.CommandText = "SELECT " + data + " FROM " + tabel + " " + kondisi;
+            }
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            dataAdapter.Fill(dataSet, tabel);
+            /* try
+             {
+
+             }
+             catch (SqlException)
+             {
+                 dataSet = null;
+             }*/
+
+            conn.Close();
+            return dataSet;
+        }
+
         public Boolean Insert(string tabel, string data) //insert data (create)
         {
             GetConnection();

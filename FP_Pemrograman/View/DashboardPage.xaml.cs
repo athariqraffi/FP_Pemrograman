@@ -18,9 +18,14 @@ namespace FP_Pemrograman.View
     /// </summary>
     public partial class DashboardPage : Page
     {
+
+        private Controller.DashboardController controller;
+
         public DashboardPage()
         {
             InitializeComponent();
+            controller = new Controller.DashboardController(this);
+            controller.Refresh();
         }
     }
 }

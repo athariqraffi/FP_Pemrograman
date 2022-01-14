@@ -34,5 +34,13 @@ namespace FP_Pemrograman.Model
             }
             return data;
         }
+        public DataSet countTodayStatistic()
+        {
+            string tabel = "transaksi";
+            string data = string.Format("COUNT(*) as jumlah_transaksi");
+            string kondisi = string.Format("tgl_penjualan", DateTime.Now.ToString());
+
+            return template.CustomSelect(tabel,data,kondisi);
+        }
     }
 }
