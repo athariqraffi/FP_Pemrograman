@@ -41,5 +41,23 @@ namespace FP_Pemrograman.View
                 popTambah.Visibility = Visibility.Visible;
             }
         }
+
+        private void btnHapusSupplier_Click(object sender, RoutedEventArgs e)
+        {
+            object idx = dgSupplier.SelectedItem;
+            if (idx == null)
+            {
+                MessageBox.Show("Silahkan pilih supplier terlebih dahulu");
+            }
+            else
+            {
+                string id_supplier = (dgSupplier.SelectedCells[0].Column.GetCellContent(idx) as TextBlock).Text;
+                MessageBoxResult conf = MessageBox.Show("Apakah anda yakin?", "Konfirmasi", MessageBoxButton.YesNo);
+                if(conf == MessageBoxResult.Yes)
+                {
+                    supplier.remvoeSupplier(id_supplier);
+                }
+            }
+        }
     }
 }

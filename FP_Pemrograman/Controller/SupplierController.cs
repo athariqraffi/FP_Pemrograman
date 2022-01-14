@@ -26,6 +26,16 @@ namespace FP_Pemrograman.Controller
             supplierpage.dgSupplier.ItemsSource = ds.Tables[0].DefaultView;
         }
 
+        public void remvoeSupplier(string id)
+        {
+            supplier.id_supplier = id;
+            Boolean result = supplier.deleteSupplier();
+            if (result)
+            {
+                loadSupplier();
+            }
+        }
+
         public void InsertController()
         {
 
@@ -40,6 +50,11 @@ namespace FP_Pemrograman.Controller
             {
                 MessageBox.Show("Data Berhasil Dimasukan");
                 supplierpage.popTambah.Visibility = Visibility.Hidden;
+                supplierpage.txtIdSupply.Text = "";
+                supplierpage.txtNamaSupply.Text = "";
+                supplierpage.txtNoHPSupply.Text = "";
+                supplierpage.txtEmailSupply.Text = "";
+                supplierpage.txtAlamatSupply.Text = "";
                 loadSupplier();
             }
             else

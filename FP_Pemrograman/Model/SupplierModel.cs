@@ -35,5 +35,11 @@ namespace FP_Pemrograman.Model
             string data = string.Format("'{0}', '{1}', '{2}', '{3}'", id_supplier, nama_supplier, no_hp, alamat);
             return temp.Insert("supplier", data);
         }
+
+        public bool deleteSupplier()
+        {
+            string kondisi = string.Format("id_supplier = '{0}'", id_supplier);
+            return temp.Delete("supplier", kondisi);
+        }
     }
 }

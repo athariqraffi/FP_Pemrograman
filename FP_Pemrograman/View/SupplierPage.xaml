@@ -83,7 +83,7 @@
                                 Margin="0 0 20 0"
                                 BorderThickness="0"
                                 BorderBrush="Transparent"
-                                x:Name="btnHapusSupplier"></Button>
+                                x:Name="btnHapusSupplier" Click="btnHapusSupplier_Click"/>
                         </DockPanel>
                     </Border>
 
