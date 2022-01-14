@@ -124,7 +124,7 @@
                       x:Name="dgSupplier"
                       AutoGenerateColumns="False"
                       IsReadOnly="True"
-                      ItemsSource="{Binding}">
+                      ItemsSource="{Binding}" MouseDoubleClick="dgSupplier_MouseDoubleClick">
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="FontWeight" Value="Bold"/>
@@ -252,23 +252,7 @@
                                 <!--Harga barang-->
                                 <DockPanel Grid.Row="7" 
                                            VerticalAlignment="Center"
-                                           Height="60">
-
-                                    <Label Content="Email Supplier"
-                                           Margin="45 0 0 0"
-                                           VerticalContentAlignment="Center"
-                                           FontSize="11pt"
-                                           Width="120"></Label>
-
-                                    <TextBox x:Name="txtEmailSupply"
-                                             Background="#ECECEC"
-                                             Padding="10 10 0 5"
-                                             FontSize="10pt"
-                                             Height="40"
-                                             Margin="40 0 0 0"
-                                             BorderThickness="0"></TextBox>
-
-                                </DockPanel>
+                                           Height="60"/>
                             </Grid>
 
                             <Grid Grid.Column="1">
