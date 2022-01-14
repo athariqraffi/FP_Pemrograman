@@ -25,6 +25,11 @@ namespace FP_Pemrograman.View
             supplier = new Controller.SupplierController(this);
         }
 
+        public void Refresh()
+        {
+            supplier.loadSupplier();
+        }
+
         private void btnSimpanBrng_Click(object sender, RoutedEventArgs e)
         {
             supplier.InsertController();
@@ -58,6 +63,14 @@ namespace FP_Pemrograman.View
                     supplier.remvoeSupplier(id_supplier);
                 }
             }
+        }
+
+        private void dgSupplier_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var item = dgSupplier.SelectedItem;
+            string id_supplier = (dgSupplier.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+            SupplierUpdateWindow window = new SupplierUpdateWindow(this, id_supplier);
+            window.Show();
         }
     }
 }

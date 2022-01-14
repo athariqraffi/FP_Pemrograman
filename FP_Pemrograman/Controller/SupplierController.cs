@@ -42,7 +42,6 @@ namespace FP_Pemrograman.Controller
             supplier.id_supplier = supplierpage.txtIdSupply.Text;
             supplier.nama_supplier = supplierpage.txtNamaSupply.Text;
             supplier.no_hp = supplierpage.txtNoHPSupply.Text;
-            supplier.email = supplierpage.txtEmailSupply.Text;
             supplier.alamat = supplierpage.txtAlamatSupply.Text;
 
 
@@ -53,7 +52,6 @@ namespace FP_Pemrograman.Controller
                 supplierpage.txtIdSupply.Text = "";
                 supplierpage.txtNamaSupply.Text = "";
                 supplierpage.txtNoHPSupply.Text = "";
-                supplierpage.txtEmailSupply.Text = "";
                 supplierpage.txtAlamatSupply.Text = "";
                 loadSupplier();
             }
