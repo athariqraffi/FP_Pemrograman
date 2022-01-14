@@ -8,7 +8,7 @@
       d:DesignHeight="943" d:DesignWidth="1580" Background="#FFFF"
       Title="TransaksiPage">
 
-        <Grid>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
@@ -38,7 +38,7 @@
                            FontWeight="SemiBold"
                            Padding="20 0 0 0"
                            VerticalContentAlignment="Center"></Label>
-                    
+
                     <TextBox Text="0"
                              x:Name="txtJmlTrans"
                              Width="80"
@@ -78,11 +78,22 @@
 
         <Grid Grid.Row="2">
             <DataGrid Width="1490"
+                      AutoGenerateColumns="False"
                       HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      Margin="20 50 0 0"
-                      Height="600"
-                      x:Name="dgTransaksi"/>
+                      VerticalAlignment="Center"
+                      Margin="137,0,0,0"
+                      Height="561"
+                      x:Name="dgTransaksi" ItemsSource="{Binding}" ColumnWidth="*">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID Transaksi" Binding="{Binding Path=id_transaksi}"/>
+                    <DataGridTextColumn Header="ID Barang" Binding="{Binding Path=id_barang}"/>
+                    <DataGridTextColumn Header="Tanggal" Binding="{Binding Path=tgl_penjualan, StringFormat='yyyy-MM-dd'}"/>
+                    <DataGridTextColumn Header="Jumlah" Binding="{Binding Path=jumlah}"/>
+                    <DataGridTextColumn Header="Total Harga" Binding="{Binding Path=total_harga}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBox x:Name="TxtCari" HorizontalAlignment="Left" Margin="1191,10,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="45" Padding="6,3,5,3" FontSize="21.3333333333333"/>
+            <Button x:Name="BtnCari" Content="Cari" HorizontalAlignment="Left" Margin="1446,10,0,0" VerticalAlignment="Top" Width="75" Height="45" Padding="6,3,5,3" FontSize="21.3333333333333" Click="BtnCari_Click"/>
         </Grid>
     </Grid>
 
