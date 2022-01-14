@@ -80,5 +80,10 @@ namespace FP_Pemrograman.View
         {
             frmMain.Navigate(new SupplierPage());
         }
+
+        private void menuDataTransaksi_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            frmMain.Navigate(new TransaksiPage());
+        }
     }
 }

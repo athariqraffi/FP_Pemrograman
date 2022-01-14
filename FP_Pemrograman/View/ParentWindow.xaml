@@ -37,6 +37,7 @@
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="50"></RowDefinition>
@@ -88,6 +89,19 @@
                            Margin="50 0 0 0"></Image>
 
                 <Label Content="Data Supplier"
+                           FontSize="20pt"
+                           FontWeight="Normal"
+                           Margin="10 0 0 0"
+                           VerticalAlignment="Center"></Label>
+
+            </DockPanel>
+
+            <DockPanel Grid.Row="5" x:Name="menuDataTransaksi" MouseLeftButtonDown="menuDataTransaksi_MouseLeftButtonDown">
+                <Image Source="../img/dataIcon.png"
+                           Width="35"
+                           Margin="50 0 0 0"></Image>
+
+                <Label Content="Data Transaksi"
                            FontSize="20pt"
                            FontWeight="Normal"
                            Margin="10 0 0 0"

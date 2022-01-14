@@ -1,0 +1,89 @@
+﻿<Page x:Class="FP_Pemrograman.View.TransaksiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FP_Pemrograman.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="943" d:DesignWidth="1580" Background="#FFFF"
+      Title="TransaksiPage">
+
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid Grid.Row="0">
+                <Label Content="History Transaksi"
+                       FontSize="30pt"
+                       FontWeight="Bold"
+                       VerticalContentAlignment="Center"
+                       Padding="20 0 0 0"></Label>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="350"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <DockPanel>
+                    <Label Content="Transaksi Hari ini : "
+                           FontSize="18pt"
+                           FontWeight="SemiBold"
+                           Padding="20 0 0 0"
+                           VerticalContentAlignment="Center"></Label>
+                    
+                    <TextBox Text="0"
+                             x:Name="txtJmlTrans"
+                             Width="80"
+                             Margin="0 0 0 0"
+                             FontSize="18pt"
+                             FontWeight="SemiBold"
+                             BorderThickness="0"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Center"
+                             HorizontalAlignment="Left"></TextBox>
+                </DockPanel>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <ComboBox Margin="0 0 20 0"
+                          Width="230"
+                          Height="45"
+                          FontSize="16pt"
+                          HorizontalContentAlignment="Left"
+                          VerticalContentAlignment="Center"
+                          FontWeight="Regular">
+
+                    <ComboBoxItem IsSelected="true" 
+                                  Content="Lihat Berdasarkan"></ComboBoxItem>
+
+                    <ComboBoxItem Content="Hari ini"
+                                  x:Name="cmbHariIni"></ComboBoxItem>
+
+                    <ComboBoxItem Content="Minggu ini"
+                                  x:Name="cmbMingguIni"></ComboBoxItem>
+
+                    <ComboBoxItem Content="Bulan ini"
+                                  x:Name="cmbBulanIni"></ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <DataGrid Width="1490"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="20 50 0 0"
+                      Height="600"
+                      x:Name="dgTransaksi"/>
+        </Grid>
+    </Grid>
+
+</Page>
