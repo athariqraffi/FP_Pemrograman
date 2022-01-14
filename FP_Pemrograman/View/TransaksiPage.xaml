@@ -80,8 +80,8 @@
             <DataGrid Width="1490"
                       AutoGenerateColumns="False"
                       HorizontalAlignment="Left"
-                      VerticalAlignment="Center"
-                      Margin="20,0,0,0"
+                      VerticalAlignment="Top"
+                      Margin="31,10,0,0"
                       Height="561"
                       x:Name="dgTransaksi" ItemsSource="{Binding}" ColumnWidth="*">
                 <DataGrid.Columns>
