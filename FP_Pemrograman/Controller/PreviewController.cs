@@ -37,10 +37,22 @@ namespace FP_Pemrograman.Controller
             window.imgFotoUPdate.Source = new BitmapImage(new Uri(imageFilePath));
 
             DataSet supp = supplier.getAllSupplier();
-            window.cmbSupplierUpdate.ItemsSource = supp.Tables[0].DefaultView;
+            window.cmbSupplierUpdate.ItemsSource = supp.Tables[0].DefaultView;  
             window.cmbSupplierUpdate.DisplayMemberPath = "nama_supplier";
             window.cmbSupplierUpdate.SelectedValuePath = "id_supplier";
             window.cmbSupplierUpdate.SelectedValue = data.Tables[0].Rows[0]["id_supplier"].ToString();
+        }
+
+        public Boolean updateBarang()
+        {
+            string id_barang = window.txtIdBrngUpdate.Text;
+            barang.id_barang = window.txtIdBrngUpdate.Text;
+            barang.id_supplier = window.cmbSupplierUpdate.SelectedValue.ToString();
+            barang.nama_barang = window.txtNamaBrngUpdate.Text;
+            barang.tanggal = window.dtpTglMaskUpdate.SelectedDate.Value.ToString("yyyy-MM-dd");
+            barang.harga = window.txtHargaBrngUpdate.Text;
+
+            return barang.updatebarang();
         }
 
         public bool deleteBarang(string id)

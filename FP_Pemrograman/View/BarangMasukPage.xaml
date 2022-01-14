@@ -142,12 +142,12 @@
                                                 <RowDefinition Height="30"/>
                                             </Grid.RowDefinitions>
                                             <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="center">
-                                                <TextBlock Text="{Binding nama_barang}" FontSize="10"/>
+                                                <TextBlock Text="Nama Store:" FontSize="10"/>
                                             </StackPanel>
                                             <Border BorderThickness=".5" BorderBrush="black" Grid.Row="1"/>
                                             <Grid Grid.Row="2">
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="60"/>
+                                                    <ColumnDefinition Width="100"/>
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
                                                 <Image Width="80"
@@ -159,11 +159,11 @@
                                                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
                                                     <DockPanel>
                                                         <TextBlock Text="Nama Barang:" FontSize="12" Padding="2"/>
-                                                        <TextBlock Text="{Binding foto}" FontSize="12" Padding="2"/>
+                                                        <TextBlock Text="{Binding nama_barang}" FontSize="12" Padding="2"/>
                                                     </DockPanel>
                                                     <DockPanel>
                                                         <TextBlock Text="Tanggal Masuk:" FontSize="12" Padding="2"/>
-                                                        <TextBlock Text="{Binding tanggal}" FontSize="12" Padding="2"/>
+                                                        <TextBlock Text="{Binding tanggal, StringFormat= dd MMMM yyyy}" FontSize="12" Padding="2"/>
                                                     </DockPanel>
                                                     <DockPanel>
                                                         <TextBlock Text="Harga Jual:" FontSize="12" Padding="2"/>

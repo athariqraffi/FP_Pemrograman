@@ -21,7 +21,7 @@ namespace FP_Pemrograman.Model
         public BarangModel()
         {
             barang = new ModelTemplateQuery();
-            
+
         }
 
         public DataSet getAllBarang()
@@ -37,14 +37,24 @@ namespace FP_Pemrograman.Model
 
         public bool InsertBarang()
         {
-            string data = "'" + id_barang + "', '"+id_supplier + "','" + nama_barang +"','" + tanggal +"','" + harga +"','" + foto + "'";
+            string data = "'" + id_barang + "', '" + id_supplier + "','" + nama_barang + "','" + tanggal + "','" + harga + "','" + foto + "'";
             return barang.Insert(tabel, data);
+        }
+
+        public bool updatebarang()
+        {
+            string table = "barang";
+            string data = string.Format("id_supplier = {0}, nama_barang = '{1}', tanggal = '{2}', harga = {3}", id_supplier, nama_barang, tanggal, harga);
+            string kondisi = string.Format("id_barang = {0}", id_barang);
+
+            return barang.Update(tabel, data, kondisi);
+            
         }
 
         public bool deleteBarang(string id)
         {
             string kondisi = string.Format("id_barang = '{0}'", id);
-            if(barang.Delete(tabel, kondisi))
+            if (barang.Delete(tabel, kondisi))
             {
                 return true;
             }

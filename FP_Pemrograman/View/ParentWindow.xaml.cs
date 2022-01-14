@@ -85,5 +85,13 @@ namespace FP_Pemrograman.View
         {
             frmMain.Navigate(new TransaksiPage());
         }
+
+        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            App.Current.Properties["id_admin"] = null;
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            Close();
+        }
     }
 }

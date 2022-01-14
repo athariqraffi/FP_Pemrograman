@@ -216,23 +216,9 @@
                                                    Source="{Binding}"
                                                    Height="130" 
                                                    Width="120" 
-                                                   HorizontalAlignment="Left"
-                                                   Margin="50,5,0,10">
-                                        </Image>
+                                                   Margin="0 25 0 0"/>
+                                        
 
-                                        <Border Width="70"
-                                                    Height="25"
-                                                    Margin="0 0 0 0"
-                                                    CornerRadius="2"
-                                                    BorderThickness="0.5"
-                                                    BorderBrush="#AE94E7"
-                                                    Background="#FFFF">
-
-                                            <Button x:Name="btnBrowseUpdate"                                                    
-                                                    Content="Browse"
-                                                    Background="Transparent"
-                                                    BorderThickness="0"></Button>
-                                        </Border>
                                     </StackPanel>
                                 </Border>
                             </DockPanel>
@@ -262,7 +248,7 @@
                                                 Background="Transparent"
                                                 BorderThickness="0"
                                                 Content="Ubah"
-                                                FontSize="12pt"></Button>
+                                                FontSize="12pt" Click="btnUbahBarang_Click"></Button>
                                 </Border>
                             </DockPanel>
                         </Grid>

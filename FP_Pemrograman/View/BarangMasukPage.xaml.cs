@@ -41,7 +41,14 @@ namespace FP_Pemrograman.View
             string filename = txtIdBrng.Text + ".jpg";
             string path = System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName +
                 "\\FotoBarang\\" + filename;
-            System.IO.File.Copy(openFile.FileName, path, true);
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Replace(openFile.FileName, path, null);
+            } else
+            {
+                System.IO.File.Copy(openFile.FileName, path, true);
+            }
+            
             barang.InsertController();
         }
 

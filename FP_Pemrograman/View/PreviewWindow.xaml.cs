@@ -22,12 +22,14 @@ namespace FP_Pemrograman.View
         View.BarangMasukPage barangpage;
 
         private string id_user;
+        private Microsoft.Win32.OpenFileDialog openFile;
 
         public PreviewWindow(string id_user, View.BarangMasukPage barangpage)
         {
             InitializeComponent();
             controller = new Controller.PreviewController(this);
             this.barangpage = barangpage;
+            openFile = new Microsoft.Win32.OpenFileDialog();
             this.id_user = id_user;
             controller.LoadPreview(id_user);
         }
@@ -47,6 +49,33 @@ namespace FP_Pemrograman.View
                     MessageBox.Show("gagal");
                 }
                 
+            }
+        }
+
+        private void btnBrowseUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            openFile.Filter = "Image FIle (*.jpg)|*.jpg|All Files (*.*)|*.*";
+            if (openFile.ShowDialog() == true)
+            {
+                string selectedFileName = openFile.FileName;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(selectedFileName);
+                bitmap.EndInit();
+                imgFotoUPdate.Source = bitmap;
+            }
+        }
+
+        private void btnUbahBarang_Click(object sender, RoutedEventArgs e)
+        {
+            if (controller.updateBarang())
+            {
+                MessageBox.Show("Barang telah sukses di update");
+                barangpage.RefreshBarang();
+                Close();
+            } else
+            {
+                MessageBox.Show("barang gagal diupdate");
             }
         }
     }
