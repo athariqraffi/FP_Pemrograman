@@ -19,6 +19,7 @@
                 <RowDefinition Height="120"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -41,13 +42,121 @@
 
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
                 </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <DockPanel Width="500"
+                               HorizontalAlignment="Center">
+
+                        <Label Content="Nama"
+                               FontSize="12pt"
+                               FontWeight="Regular"
+                               Foreground="#666666"
+                               VerticalContentAlignment="Center"></Label>
+
+                        <TextBox x:Name="txtNamaAdmin"
+                                 Width="250"
+                                 Margin="72 0 0 0"
+                                 Height="40"
+                                 BorderThickness="0 0 0 2"
+                                 BorderBrush="#AE94E7"
+                                 Background="#F4F4F4"/>
+                    </DockPanel>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <DockPanel Width="500"
+                               HorizontalAlignment="Center">
+
+
+                        <Label Content="Tanggal Lahir"
+                               FontSize="12pt"
+                               FontWeight="Regular"
+                               Foreground="#666666"
+                               VerticalContentAlignment="Center"></Label>
+
+                        <TextBox x:Name="txtTglLahir"
+                                 Width="250"
+                                 Margin="20 0 0 0"
+                                 Height="40"
+                                 BorderThickness="0 0 0 2"
+                                 BorderBrush="#AE94E7"
+                                 Background="#F4F4F4"/>
+                    </DockPanel>
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <DockPanel Width="500"
+                               HorizontalAlignment="Center">
+
+
+                        <Label Content="No. Telp"
+                               FontSize="12pt"
+                               FontWeight="Regular"
+                               Foreground="#666666"
+                               VerticalContentAlignment="Center"></Label>
+
+                        <TextBox x:Name="txtNoTelp"
+                                 Width="250"
+                                 Margin="50 0 0 0"
+                                 Height="40"
+                                 BorderThickness="0 0 0 2"
+                                 BorderBrush="#AE94E7"
+                                 Background="#F4F4F4"/>
+                    </DockPanel>
+                </Grid>
+
+                <Grid Grid.Row="7">
+                    <DockPanel Width="500"
+                               HorizontalAlignment="Center">
+
+
+                        <Label Content="Alamat"
+                               FontSize="12pt"
+                               FontWeight="Regular"
+                               Foreground="#666666"
+                               VerticalContentAlignment="Top"></Label>
+
+                        <RichTextBox x:Name="txtAlamat"
+                                 Width="250"
+                                 Margin="60 0 0 0"
+                                 Height="100"
+                                 BorderThickness="0 0 0 2"
+                                 BorderBrush="#AE94E7"
+                                 Background="#F4F4F4"
+                                 VerticalAlignment="Top"/>
+                    </DockPanel>
+                </Grid>
             </Grid>
+
+            
+            <!--<Grid Grid.Row="3">
+                <Border Width="100"
+                        Height="50"
+                        CornerRadius="5"
+                        Background="#C4BDF0"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 50 0">
+                    
+                    <Button x:Name="btnBack"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Content="Kembali"
+                            FontSize="12pt"
+                            FontWeight="SemiBold"
+                            Foreground="#FFFF" Click="btnBack_Click">
+                        
+                    </Button>
+                </Border>
+            </Grid>-->
         </Grid>
     </Border>
 </Page>
