@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FP_Pemrograman.View"
         mc:Ignorable="d"
         Title="PreviewWindow" 
-        d:DesignHeight="600" d:DesignWidth="850" Background="#FFFF">
+        d:DesignHeight="943" d:DesignWidth="1580" Background="#FFFF">
 
     <Grid>
         <Canvas x:Name="popPreview"
@@ -17,7 +17,9 @@
             <Border Width="850"
                     Height="584" 
                     Background="#FFFF"
-                    CornerRadius="15">
+                    CornerRadius="15" 
+                    Canvas.Left="347" 
+                    Canvas.Top="172">
 
                 <Grid>
                     <Grid.RowDefinitions>
